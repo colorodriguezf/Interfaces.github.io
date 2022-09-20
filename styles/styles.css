@@ -1,0 +1,10 @@
+div {
+    position: relative;
+    top:30vh;
+}
+div a {
+font-size: 4rem;
+display:flex;
+justify-content: center;
+margin-top:50px;
+}
