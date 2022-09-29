@@ -1,0 +1,79 @@
+body {
+    background-color: black;
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    justify-content:space-evenly;
+    width: 95%;
+    height: 100px;
+    position: absolute;
+    bottom:0;
+}
+
+footer div {
+    color:white;
+}
+
+.footer-left {
+    display:flex;
+    align-items:center;
+}
+.footer-left li {
+    display: inline;
+    gap:10px;
+}
+.footer-left ul li {
+    list-style: none;
+    font-size:1.3rem;
+    margin-left: 5px;
+}
+.footer-left ul a {
+    color:white;
+    text-decoration:none;
+}
+.footer-left ul a:hover {
+    color:white;
+    text-decoration:none;
+}
+
+
+.footer-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height:auto;
+    font-size:1.3rem;
+}
+.contenedor-img-footer a {
+    display: flex;
+    justify-content: center;
+}
+.img-logo-footer {
+    width: 50%;
+}
+.contenedor-copyright-footer {
+    display:flex;
+   justify-content: center;
+}
+
+.footer-right-redessociales {
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    width: 12%;
+}
+.svg-fb path:hover {
+    fill:#3b5998;
+}
+.svg-ig path:hover {
+    fill:rgb(239, 75, 75)
+}
+.svg-tw path:hover {
+    fill:#1da1f2;
+}
+
+
+/*-------*/
