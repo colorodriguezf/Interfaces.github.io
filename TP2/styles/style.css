@@ -183,6 +183,7 @@ body {
 .contenedor-footer {
     display: flex;
     justify-content:space-between;
+    width: 100%;
     height: 140px;   
     background-color: black;
     position: absolute;
