@@ -286,6 +286,9 @@ footer div {
         height: 120px;   
         background-color: black;
     }
+    .footer-left {
+        justify-content: right;
+    }
     .footer-left ul {
         margin-left:25px;
     }
@@ -301,6 +304,13 @@ footer div {
     .contenedor-copyright-footer p {
         font-size:16px;
         text-align: center;
+    }
+
+    .footer-right-redessociales {
+        justify-content: left;
+    }
+    .footer-right-redessociales svg {
+        margin-right:100px;
     }
     .svg-fb{
         fill:#3b5998;
