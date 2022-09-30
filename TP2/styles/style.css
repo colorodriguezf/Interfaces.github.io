@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: black;
 }
 
 /* HEADER */
@@ -208,9 +209,81 @@ body {
     .hamb{
         display: none;
     }
-} */
 
+    footer:
+.contenedor-footer {
+    display: flex;
+    justify-content:space-between;
+    height: 100px;   
+    background-color: black;
+}
+
+footer div {
+    color:white;
+}
+
+.footer-left {
+    width:100%;
+    display:flex;
+    align-items: center;
+
+}
+.footer-left li {
+    display: inline;
+}
+.footer-left ul li {
+    list-style: none;
+    font-size:1rem;
+    
+}
+.footer-left ul a {
+    color:white;
+    text-decoration:none;
+}
+.footer-left ul a:hover {
+    color:white;
+    text-decoration:none;
+}
+
+
+.footer-center {
+    display: block;
+   width:100%;
+}
+.contenedor-img-footer a {
+    display: flex;
+    justify-content: center;
+}
+.img-logo-footer {
+    width: 40%;
+}
+.contenedor-copyright-footer {
+    display:flex;
+   justify-content: center;
+}
+.contenedor-copyright-footer p {
+    font-size:1rem
+}
+
+.footer-right-redessociales {
+   width:100%;
+   display: flex;
+   justify-content:space-evenly;
+   align-items: center;
+}
+.svg-fb path:hover {
+    fill:#3b5998;
+}
+.svg-ig path:hover {
+    fill:rgb(239, 75, 75)
+}
+.svg-tw path:hover {
+    fill:#1da1f2;
+}
+
+} */
 /* ------------------------------------------------------------------------------------------------------------------  */
+
 
 
 .nav-container {
@@ -303,4 +376,84 @@ body {
     margin: auto;
     height: 20px;
 }
+
+
+/*Footer*/
+.contenedor-footer {
+    display: flex;
+    justify-content:space-between;
+    height: 140px;   
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+footer div {
+    color:white;
+}
+
+.footer-left {
+    width:100%;
+    display:flex;
+    align-items: center;
+
+}
+.footer-left li {
+    display: inline;
+}
+.footer-left ul li {
+    list-style: none;
+    font-size:1rem;
+    
+}
+.footer-left ul a {
+    color:white;
+    text-decoration:none;
+}
+.footer-left ul a:hover {
+    color:white;
+    text-decoration:none;
+}
+
+
+.footer-center {
+    display: block;
+   width:100%;
+}
+.contenedor-img-footer a {
+    display: flex;
+    justify-content: center;
+}
+.img-logo-footer {
+    width: 40%;
+}
+.contenedor-copyright-footer {
+    display:flex;
+   justify-content: center;
+}
+.contenedor-copyright-footer p {
+    font-size:1rem
+}
+
+.footer-right-redessociales {
+   width:75%;
+   display: flex;
+   justify-content:space-evenly;
+   align-items: center;
+}
+.svg-fb{
+    fill:#3b5998;
+    height:20px;
+}
+.svg-ig{
+    fill:rgb(239, 75, 75);
+    height:20px;
+}
+.svg-tw {
+    fill:#1da1f2;
+    height:20px;
+}
+
+
+/*-------*/
 
