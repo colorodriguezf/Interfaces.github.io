@@ -202,13 +202,15 @@ footer div {
     align-items: center;
 
 }
+
+.footer-left ul  {
+    padding-left: 10px;
+}
+
 .footer-left li {
     display: inline;
-}
-.footer-left ul li {
     list-style: none;
-    font-size:0.8rem;
-    
+    font-size:10px;
 }
 .footer-left ul a {
     color:white;
@@ -223,6 +225,7 @@ footer div {
 .footer-center {
     display: block;
     width:100%;
+    margin:auto;
 }
 .contenedor-img-footer a {
     display: flex;
@@ -236,11 +239,12 @@ footer div {
    justify-content: center;
 }
 .contenedor-copyright-footer p {
-    font-size:0.9rem
+    font-size:12px;
+    text-align: center;
 }
 
 .footer-right-redessociales {
-   width:75%;
+   width:100%;
    display: flex;
    justify-content:space-evenly;
    align-items: center;
