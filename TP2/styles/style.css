@@ -20,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     width: auto;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .nav-center{
@@ -28,7 +28,7 @@ body {
     justify-content: center;
     align-items: center;
     width: auto;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .nav-right {
@@ -144,7 +144,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 20px;
+        margin-right: 10px;
     }
 
     .nav-imageuser {
@@ -156,7 +156,7 @@ body {
     }
 
     .nav-cart{
-        margin-right: 15px;
+        margin-right: 10px;
     }
 
 }
