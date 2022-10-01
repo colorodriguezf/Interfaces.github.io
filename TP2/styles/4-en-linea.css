@@ -1,0 +1,77 @@
+.game-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.breadcrumb {
+    margin-top: 20px;
+    margin-left: 10%;
+}
+
+.breadcrumb a{
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumb a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.container-button {
+    margin-right: 10%;
+}
+
+.btn-share{
+    background: rgba(82, 180, 218, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    width: 167px;
+    height: 37px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.name-game {
+    color: white;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 0px;
+    margin-left: 10%;
+}
+
+.preview-game {
+    margin: auto;
+    width: 1000px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.preview-game img{
+    display: block;
+    margin: auto;
+}
+
+.container-howtoplay{
+    display: block;
+    margin: auto;
+    margin-top: 65px;
+    width: 1400px;
+    height: 818px;
+    background: rgba(217, 217, 217, 0.1);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: 2px solid #DCDEE2;
+    border-radius: 16px;
+}
