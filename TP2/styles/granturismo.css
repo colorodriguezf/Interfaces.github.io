@@ -1,0 +1,59 @@
+.contenedor-reserva {
+    height:85vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url('../imgs/granturismo/granturismo1.png');
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenedor-logo-desc-compra {
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+    filter: none;
+}
+
+.contenedor-logo{
+    display:flex;
+    justify-content:center;
+    margin-top:50px
+}
+.contenedor-logo img {
+    width:45%;
+}
+
+.descripcion-juego {
+    display:flex;
+    justify-content:center;
+}
+.descripcion-juego p {  
+    color:white;   
+    font-size: 20px;
+    width:590px;
+    height:108px;
+    top:5px;
+    left:58px;
+}
+
+.contenedor-btn-reservar {
+    display:flex;
+    justify-content:center;
+    margin-top: 50px;
+}
+.btn-reservar {
+    width: 250px;
+    height: 48px;
+    font-size:15px;
+    left: 216px;
+    top: 181px;
+    border-radius:10px;
+    background-color: #52B4DA;
+    color:white;
+}
+.btn-reservar:hover {
+    font-size:16px;
+    font-weight: bold;
+    background-color: #DA4B9C;
+    color:white;
+}
