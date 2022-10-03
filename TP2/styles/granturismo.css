@@ -1,3 +1,4 @@
+/*Reserva: */
 .contenedor-reserva {
     height:85vh;
     background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url('../imgs/granturismo/granturismo1.png');
@@ -57,3 +58,69 @@
     background-color: #DA4B9C;
     color:white;
 }
+
+/* Cards características */
+.cont-caract-cards {
+    background: rgb(27,27,27);
+    background: linear-gradient(0deg, rgba(27,27,27,1) 0%, rgba(31,31,31,1) 16%, rgba(14,15,15,1) 53%, rgba(0,0,0,1) 100%);
+    padding-bottom: 60px;
+}
+.contenedor-caractClave {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-caractClave h1 {
+    color:white;
+    margin-bottom: 0px;
+    font-size: 55px;
+}
+.contenedor-caractClave h2 {
+    color: #C9C9C9;
+    font-size: 30px;
+}
+
+.contenedor-cards-informativas {
+    margin-top: 30px;
+    display:flex;
+    justify-content: space-evenly;
+}
+.cont-caract {
+    width:550px;
+    height:28;
+    border-radius: 5px;
+    border:solid 1px rgb(171, 166, 166);
+}
+.cont-img-caract {
+    width: 100%;
+    margin:auto;
+}
+.cont-img-caract img {
+    border-radius: 2px;
+}
+.desc-p-caract {
+    margin-top:3px;
+    margin-bottom: 0px;
+    height:100px;
+    color:white;
+    font-size:20px;
+    overflow-wrap: break-word;
+    text-align:center;
+}
+
+.cont-aviso-caract {
+    color:white;
+    margin-top:80px;
+    margin-left:4%;
+    font-size:18px;
+}
+
+
+.contenedor-carrousel-caracteristicas {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+    
