@@ -48,6 +48,7 @@
     font-size:15px;
     left: 216px;
     top: 181px;
+    border: none;
     border-radius:10px;
     background-color: #52B4DA;
     color:white;
@@ -62,7 +63,7 @@
 /* Cards características */
 .cont-caract-cards {
     background: rgb(27,27,27);
-    background: linear-gradient(0deg, rgba(27,27,27,1) 0%, rgba(31,31,31,1) 16%, rgba(14,15,15,1) 53%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(0deg, rgb(59, 59, 59) 0%, rgba(31,31,31,1) 16%, rgba(14,15,15,1) 53%, rgba(0,0,0,1) 100%);
     padding-bottom: 60px;
 }
 .contenedor-caractClave {
@@ -92,10 +93,7 @@
     border-radius: 5px;
     border:solid 1px rgb(171, 166, 166);
 }
-.cont-img-caract {
-    width: 100%;
-    margin:auto;
-}
+
 .cont-img-caract img {
     border-radius: 2px;
 }
@@ -122,5 +120,87 @@
     gap: 50px;
     margin-top: 50px;
     margin-left: 50px;
+}
+
+.cont-img-card {
+    width: 100%;
+    margin:auto;
+    filter: brightness(0.5) saturate(0.5) contrast(1.2) blur(0.5px);
+    transition: filter 200ms linear, transform 200ms linear;
+}
+.cont-img-card:hover {
+    transform: scale(1.1);
+    filter: none;
+}
+
+/*Historia */
+.contenedor-historia {
+    display:flex;
+    margin:100px 0px 100px 0px;
+    flex-direction:column;
+    width: 90%;
+    height: 900px;
+    margin-left:5%;
+    font-size: 25px;
+    color:#F3EAEA;
+    border-radius:20px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    gap:25px;
+    letter-spacing:2px;
+}
+.contenedor-titulo-historia {
+    text-align: center;
+    margin-top:40px;
+}
+.contenedor-historia div {
+    padding:0px 30px 0px 30px;
+}
+.contenedor-historia span {
+    color:white;
+}
+span {
+    font-weight: bolder;
+}
+
+/*Funciones PS5 */
+.fondo-funciones-ps5 {
+    background-image: linear-gradient(to bottom, #c0c0c0, #cccccc, #d7d7d7, #e3e3e3, #efefef, #efefef, #efefef, #efefef, #e3e3e3, #d7d7d7, #cccccc, #c0c0c0);
+
+}
+.contenedor-aviso-ps5 {
+    display: flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.contenedor-funciones {
+    color:black;
+    width:43%;
+    margin-top:20px;
+}
+
+.contenedor-funciones ul li {
+    list-style-type : square;
+    font-size :18px;
+    margin-top:20px;
+    letter-spacing: 2px;
+}
+
+.btn-mas-info {
+    width:340px;
+    height: 55px;
+    border-radius:35px;
+    font-size: 20px;
+    border:none;
+}
+.btn-mas-info:hover {
+    font-size:20.5px;
+}
+.contenedor-aviso-requerimiento {
+    font-size:18px;
+    margin:50px 0px 0px 200px;
+    padding-bottom: 25px; 
 }
     
