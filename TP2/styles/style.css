@@ -261,11 +261,27 @@ footer div {
     }
 
     .modal-perfil {
-        width: 216px;
+        position: absolute;
+        right:10px;
+        width: 200px;
         height: 142px;
         background: #FDFEFE;
+        padding:8px 0px 8px 20px;
         border-radius: 10px;
-        }
+    }
+    .modal-perfil-none {
+        display: none;
+    }
+
+    .contenedor-info-modal-perfil {
+        display: flex;
+        font-family: 'Roboto';
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 5px;
+        margin-top:5px;
+        gap:20px;
+    }
         
     /*Footer*/
     .contenedor-footer {
@@ -286,29 +302,6 @@ footer div {
     .contenedor-copyright-footer p {
         font-size:14px;
         text-align: center;
-    }
-
-    .modal-perfil {
-        position: absolute;
-        left: 70vw;
-        width: 200px;
-        height: 142px;
-        background: #FDFEFE;
-        padding:8px 0px 8px 20px;
-        border-radius: 10px;
-    }
-    .modal-perfil-none {
-        display: none;
-    }
-
-    .contenedor-info-modal-perfil {
-        display: flex;
-        font-family: 'Roboto';
-        font-weight: normal;
-        font-size: 10px;
-        line-height: 5px;
-        margin-top:5px;
-        gap:20px;
     }
 
 }
@@ -381,7 +374,7 @@ footer div {
 
     .modal-perfil {
         position: absolute;
-        left: 84vw;
+        right:20px;
         width: 260px;
         height: 142px;
         background: #FDFEFE;
