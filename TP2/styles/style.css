@@ -395,9 +395,68 @@ footer div {
         gap:20px;
     }
 
-
+    /* RECOMENDADOS */
+    .container-recomendados{
+        display: flex;
+        justify-content:center;
+        gap:100px;
+    }
+    .recomendados {
+        color:white;
+    }
+    .container-recomendados-left {
+       height:auto;
+    }
+    .container-recomendados-left .contenedor-titulo-recomendados h1 {
+        font-size:3rem;
+    }
+    .container-recomendados-right {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .contenedor-card-recomendados {
+        color:white;
+        display:inline-block;
+        height:auto;
+        width:300px;
+        padding:0;
+        margin:0;
+    }
+    .contenedor-titulo-recomendados {
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        background-color: white;
+        color:black;
+        height:100px;
+        padding:0;
+        margin:0;
+    }
+    .contenedor-titulo-recomendados h1 {
+        margin:0;
+        font-size: 25px ;
+    }
+    .card-derecha {
+        height:260px;
+        margin:0;
+    }
+    .contenedor-titulo-recomendados-right {
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        background-color: white;
+        color:black;
+        height:60px;
+        padding:0;
+        margin:0;
+    }
+    .contenedor-titulo-recomendados-right {
+        margin:0;
+        font-size: 12px ;
+    }
+    /*-----------------------------------*/
 }
 
 
-/*-------*/
 
