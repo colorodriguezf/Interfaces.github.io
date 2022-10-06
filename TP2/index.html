@@ -12,11 +12,19 @@
 </head>
 <body>
 
+    <div class="loading-spinner show-spinner">
+        <div class="spin"></div>
+        <h1>CARGANDO HOME</h1>
+        <div id="progressBar">
+            <div id="barStatus"></div>
+        </div>
+    </div>
+
     <header>
         <div class="nav-container">
             <div class="nav-left">
                 <div class="nav-menu">
-                    <svg class="hamb" viewBox="0 0 73 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg onclick="dropCategories()" class="hamb dropbtn" viewBox="0 0 73 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.66633 46.5005H68.3589C70.5483 46.5005 72.3397 44.7759 72.3397 42.668C72.3397 40.5601 70.5483 38.8354 68.3589 38.8354H4.66633C2.4769 38.8354 0.685547 40.5601 0.685547 42.668C0.685547 44.7759 2.4769 46.5005 4.66633 46.5005ZM4.66633 27.3377H68.3589C70.5483 27.3377 72.3397 25.6131 72.3397 23.5051C72.3397 21.3972 70.5483 19.6726 68.3589 19.6726H4.66633C2.4769 19.6726 0.685547 21.3972 0.685547 23.5051C0.685547 25.6131 2.4769 27.3377 4.66633 27.3377ZM0.685547 4.34233C0.685547 6.45024 2.4769 8.17489 4.66633 8.17489H68.3589C70.5483 8.17489 72.3397 6.45024 72.3397 4.34233C72.3397 2.23442 70.5483 0.509766 68.3589 0.509766H4.66633C2.4769 0.509766 0.685547 2.23442 0.685547 4.34233Z" fill="white"/>
                     </svg>
                 </div>
@@ -90,6 +98,27 @@
             </div>
         </div>
     </header>
+
+    <div class="dropdown-profile">
+        <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">
+                Destacados
+                <svg class="tick-categories" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.0572 3.29928L5.64933 13.4308C5.57877 13.516 5.49471 13.5836 5.402 13.6299C5.30929 13.6762 5.20977 13.7002 5.1092 13.7006C5.00862 13.7009 4.90899 13.6776 4.81605 13.6319C4.72312 13.5863 4.63872 13.5192 4.56775 13.4346L0.222486 8.25584C0.081674 8.08837 0.00180154 7.86198 3.01033e-05 7.62533C-0.00174133 7.38868 0.0747298 7.16064 0.213013 6.99022L1.68459 5.17709C1.75507 5.09031 1.83945 5.02115 1.93277 4.97369C2.0261 4.92622 2.12648 4.90141 2.228 4.90071C2.32952 4.90001 2.43013 4.92344 2.52391 4.96962C2.6177 5.0158 2.70275 5.08379 2.77407 5.16959L5.11091 7.98303L11.512 0.269281C11.5828 0.18399 11.6671 0.116262 11.7602 0.0700338C11.8532 0.0238059 11.9531 0 12.0539 0C12.1548 0 12.2546 0.0238059 12.3477 0.0700338C12.4407 0.116262 12.5251 0.18399 12.5959 0.269281L14.058 2.03178C14.3501 2.38241 14.3501 2.94772 14.058 3.29928H14.0572Z" fill="white"/>
+                </svg>   
+            </a>
+            <a href="#">Todos los juegos</a>
+            <a href="#">Accion</a>
+            <a href="#">Arcade</a>
+            <a href="#">Aventura</a>
+            <a href="#">Coches</a>
+            <a href="#">Deportes</a>
+            <a href="#">Estrategia</a>
+            <a href="#">Habilidad</a>
+            <a href="#">Puzzle</a>
+        </div>
+    </div>
 
     <div>
         <h1 class="recomendados">RECOMENDADOS</h1>
@@ -214,6 +243,7 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/preloader.js"></script>
 
 </body>
 </html>
