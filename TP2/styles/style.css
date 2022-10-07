@@ -522,7 +522,7 @@ footer div {
         color:white;
     }
     .container-recomendados-left {
-       height:auto;
+        max-height: 500px;
     }
     .container-recomendados-left .contenedor-titulo-recomendados h1 {
         font-size:3rem;
@@ -571,6 +571,12 @@ footer div {
     .contenedor-titulo-recomendados-right {
         margin:0;
         font-size: 12px ;
+    }
+
+    .img-game{
+    display: block;
+    width: 100%;
+    object-fit: cover;
     }
     /*-----------------------------------*/
 }

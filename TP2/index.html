@@ -8,17 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/carrusel.css">
     <title>Document</title>
 </head>
 <body>
 
-    <div class="loading-spinner show-spinner">
+    <!-- <div class="loading-spinner show-spinner">
         <div class="spin"></div>
         <h1>CARGANDO HOME</h1>
         <div id="progressBar">
             <div id="barStatus"></div>
         </div>
-    </div>
+    </div> -->
 
     <header>
         <div class="nav-container">
@@ -125,7 +126,7 @@
         <div class="container-recomendados">
             <div class="container-recomendados-left">
                 <div>
-                    <img src="imgs/4-en-linea/image 59.png" alt="" width="550px" height="400px">
+                    <img class="img-game" src="imgs/4-en-linea/image 59.png" alt="" width="550px" height="400px">
                 </div>
                 <div class="contenedor-titulo-recomendados">
                     <div>
@@ -140,7 +141,7 @@
                     <div class="card-derecha">  
                         <div class="contenedor-card-recomendados">
                             <div>
-                                <img src="imgs/battlefield.png" alt="" width="300" height="150">
+                                <img class="img-game" src="imgs/battlefield.png" alt="" width="300" height="150">
                             </div>
                             <div class="contenedor-titulo-recomendados-right">
                                 <div>
@@ -155,7 +156,7 @@
                     <div class="card-derecha">
                         <div class="contenedor-card-recomendados">
                             <div>
-                                <img src="imgs/granturismoTapa.png" alt="" width="300px" height="150">
+                                <img class="img-game" src="imgs/granturismoTapa.png" alt="" width="300px" height="150">
                             </div>
                             <div class="contenedor-titulo-recomendados-right">
                                 <div>
@@ -171,7 +172,7 @@
                     <div class="card-derecha">
                       <div class="contenedor-card-recomendados">
                             <div>
-                                <img src="imgs/subnautica.png" alt="" width="300px" height="150">
+                                <img class="img-game" src="imgs/subnautica.png" alt="" width="300px" height="150">
                             </div>
                             <div class="contenedor-titulo-recomendados-right">
                                 <div>
@@ -186,7 +187,7 @@
                     <div class="card-derecha">  
                         <div class="contenedor-card-recomendados">
                                 <div>
-                                    <img src="imgs/tekken.png" alt="" width="300px" height="150">
+                                    <img class="img-game" src="imgs/tekken.png" alt="" width="300px" height="150">
                                 </div>
                                 <div class="contenedor-titulo-recomendados-right">
                                     <div>
@@ -198,7 +199,528 @@
                                 </div>
                         </div>
                     </div>
-                
+            </div>
+        </div>
+    </div>
+
+    <div class="container-carrusels">
+        <div class="Carousel">
+            <h2>Juegos de accion</h2>
+            <div class="slick-list" id="slick-list">
+                <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                </button>
+                <div class="slick-track" id="track">
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/Accion/img gow.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>GOD OF WAR</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/Accion/img tlos.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>THE LAST OF US</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/Accion/img red 2.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>RED DEAD REDEMPTION 2</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/Accion/img spiderman.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>SPIDER-MAN</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/Accion/img hitman.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>HITMAN</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/Accion/img gta5.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>GTA V</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slick-arrow slick-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                </button>
+            </div>
+        </div>
+    
+        <div class="Carousel">
+            <h2>Juegos de deportes</h2>
+            <div class="slick-list" id="slick-list">
+                <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                </button>
+                <div class="slick-track" id="track">
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/deportes/img fifa.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>FIFA 23</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/deportes/img f1.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>F1 22</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/deportes/img nba.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>NBA 2K23</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/deportes/img tenis.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>TENIS WORLD TOUR</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/deportes/img nfl.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>NFL MADDEN 22</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/deportes/img nhl.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>NHL 23</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slick-arrow slick-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                </button>
+            </div>
+        </div>
+    
+        <div class="Carousel">
+            <h2>Juegos de tiros</h2>
+            <div class="slick-list" id="slick-list">
+                <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                </button>
+                <div class="slick-track" id="track">
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/tiros/image 46.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>COUNTER STRIKE</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/tiros/img cod.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>COD WARZONE</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/tiros/img pubg.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>PUBG</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/tiros/img fornite.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>FORNITE</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/tiros/img apex.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>APEX</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/tiros/img valorant.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>VALORANT</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slick-arrow slick-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                </button>
+            </div>
+        </div>
+    
+        <div class="Carousel">
+            <h2>Juegos arcade</h2>
+            <div class="slick-list" id="slick-list">
+                <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                </button>
+                <div class="slick-track" id="track">
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/arcade/img street fighter.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>STREET FIGHTER II</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/arcade/img qober.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>Q'BERT</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/arcade/img oeggle.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>PEGGLE 2</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/arcade/img CROC'S WORLD.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>CROSC'S WORLD</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/arcade/img zomb.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>ZOMB</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/arcade/image 54.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>ESPECIAL DELIVERY</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slick-arrow slick-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                </button>
+            </div>
+        </div>
+    
+        <div class="Carousel">
+            <h2>Juegos premium</h2>
+            <div class="slick-list" id="slick-list">
+                <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg>
+                </button>
+                <div class="slick-track" id="track">
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/premium/image 58.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>DEAD ISLAND 2</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/premium/image 78.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>A.C. ODYSSEY</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/premium/image 79.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>GEARS 5</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/premium/image 80.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>CYBERPUNK 2077</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/premium/image 81.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>FAR CRY 6</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contenedor-card">
+                            <div>
+                                <img class="img-game" src="imgs/Imagenes del carrusel/premium/image 82.png" alt="" width="300" height="150">
+                            </div>
+                            <div class="contenedor-titulo-card">
+                                <div>
+                                    <h1>HORIZON FORBBIDEN</h1>
+                                </div>
+                                <div>
+                                    <img src="imgs/control.webp" alt=""  height="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slick-arrow slick-next" id="button-next" data-button="button-next" onclick="app.processingButton(event)">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                </button>
             </div>
         </div>
     </div>
@@ -243,7 +765,8 @@
     </footer>
 
     <script src="js/app.js"></script>
-    <script src="js/preloader.js"></script>
+    <script defer src="js/carrusel.js"></script>
+    <!-- <script src="js/preloader.js"></script> -->
 
 </body>
 </html>

@@ -1,0 +1,119 @@
+h2, a{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.Carousel{
+    width: 100%;
+    /* margin: 0px 60px; */
+    margin-bottom: 100px;
+}
+
+.Carousel h2{
+    font-size: 26px;
+    line-height: 38px;
+    padding-bottom: 24px;
+    opacity: .9;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: start;
+    color: white;
+    padding-left: 50px;
+}
+
+/* images */
+
+.slick-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    /* height: 304px; */
+    padding: 10px 0px;
+    margin: 0px auto;
+    /* max-width: 90vw; */
+    max-width: 1600px;
+    overflow: hidden;
+}
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+/* buttons */
+
+.slick-arrow{
+    border-radius: 30px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+    border: 0;
+    cursor: pointer;
+}
+.slick-arrow:focus{
+    outline: 0;
+}
+.slick-arrow svg{
+    width: 12px;
+    height: 100%;
+    color: rgba(0,0,0,.7);
+}
+.slick-prev{
+    left: 0px;
+}
+.slick-next{
+    right: 0px;
+}
+
+.contenedor-card {
+    color:white;
+    display:inline-block;
+    height:auto;
+    width:300px;
+    padding:0;
+    margin:0;
+}
+
+.img-game{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 175px;
+}
+
+.contenedor-titulo-card {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color: white;
+    color:black;
+    height:80px;
+    padding:0;
+    margin:0;
+    font-size: 12px;
+    padding: 0px 10px;
+    gap: 10px;
+}
+
+.contenedor-titulo-card h1 {
+    margin:0;
+    font-size: 25px ;
+}
+
+.card {
+    width: 300px;
+    margin: 0;
+    padding: 0 10px;
+}

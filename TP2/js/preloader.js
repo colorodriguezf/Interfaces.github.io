@@ -20,9 +20,9 @@ function moveProgressBar() {
             spinner.style.display= 'none';
         } else {
             width++;
-            elem.style.width = width + '%'; 
+            elem.style.width = width + '%';
         }
     }
 }
 
-window.onload = moveProgressBar();
+window.onload= moveProgressBar();
