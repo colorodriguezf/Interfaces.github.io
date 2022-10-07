@@ -42,21 +42,20 @@ App.prototype.processingButton = function(event) {
 
     track.style.left == ""  ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0, -2) * -1);
 
-    btn.dataset.button == "button-prev" ? prevAction(leftPosition,slickWidth,track) : nextAction(leftPosition,trackWidth,listWidth,slickWidth,track)
+    btn.dataset.button == "button-prev" ? prevAction(leftPosition,trackWidth,listWidth,slickWidth,track) : nextAction(leftPosition,trackWidth,listWidth,slickWidth,track)
 }
 
-let prevAction = (leftPosition,slickWidth,track) => {
+let prevAction = (leftPosition,trackWidth,listWidth,slickWidth,track) => {
     if(leftPosition > 0) {
         track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
     }
     else {
-        track.style.left = `-320px`
+        track.style.left = `-${(trackWidth - listWidth)}px`
     }
 }
 
 let nextAction = (leftPosition,trackWidth,listWidth,slickWidth,track) => {
     if(leftPosition < (trackWidth - listWidth)) {
-        console.log(-1 * (leftPosition + slickWidth));
         track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
     }
     else {
