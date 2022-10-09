@@ -1,26 +1,20 @@
-// const buttonPrev = document.getElementById('button-prev');
-// const buttonNext = document.getElementById('button-next');
-// const track = document.getElementById('track');
-// const slickList = document.getElementById('slick-list');
-// const slick = document.querySelectorAll('.slick');
+let btnShop = document.getElementById('btn-buy-game');
+let svgCart = document.getElementById('svg-cart');
+let svgTick = document.getElementById('svg-tick');
 
-// const slickWidth = slick[0].offsetWidth;
-
-// buttonPrev.onClick = () => Move(1);
-// buttonNext.onClick = () => Move(2);
-
-// function Move(value){
-//     const trackWidth = track.offsetWidth;
-//     const listWidth = slickList.offsetWidth;
-
-//     track.style.left == "" ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice)
-
-//     if(leftPosition < (trackWidth - listWidth) && value == 2) {
-//         track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
-//     } else if(leftPosition > 0 && value == 1) {
-//         track.style.left = `${-1 * (leftPosition - slickWidth)}px`;
-//     }
-// }
+document.getElementById('btn-buy-game').addEventListener('click', function(e) {
+    if(btnShop.classList.contains( 'btn-buy-game' )) {
+        btnShop.classList.remove('btn-buy-game');
+        btnShop.classList.add('btn-buy-game-tick');
+        svgCart.style.display = 'none';
+        svgTick.style.display = 'block';
+    } else {
+        btnShop.classList.remove('btn-buy-game-tick');
+        btnShop.classList.add('btn-buy-game');
+        svgTick.style.display = 'none';
+        svgCart.style.display = 'block';
+    }
+});
 
 function App() {}
 
