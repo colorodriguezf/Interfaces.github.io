@@ -61,13 +61,22 @@
 }
 
 /* Cards características */
+.slick-track {
+    position: relative;
+    top: 12px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
 .cont-caract-cards {
     background: rgb(27,27,27);
     background: linear-gradient(0deg, rgb(59, 59, 59) 0%, rgba(31,31,31,1) 16%, rgba(14,15,15,1) 53%, rgba(0,0,0,1) 100%);
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 }
 .contenedor-caractClave {
     margin-top: 50px;
+    margin-bottom: 20px;;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +84,7 @@
 .contenedor-caractClave h1 {
     color:white;
     margin-bottom: 0px;
-    font-size: 55px;
+    font-size: 30px;
 }
 .contenedor-caractClave h2 {
     color: #C9C9C9;
@@ -88,13 +97,14 @@
     justify-content: space-evenly;
 }
 .cont-caract {
-    width:550px;
+    width:28%;
     height:28;
     border-radius: 5px;
     border:solid 1px rgb(171, 166, 166);
 }
 
 .cont-img-caract img {
+    width:100%;
     border-radius: 2px;
 }
 .desc-p-caract {
@@ -102,7 +112,7 @@
     margin-bottom: 0px;
     height:100px;
     color:white;
-    font-size:20px;
+    font-size:17px;
     overflow-wrap: break-word;
     text-align:center;
 }
@@ -120,39 +130,45 @@
     gap: 50px;
     margin-top: 50px;
     margin-left: 50px;
+    width: 80%;
 }
 
-.cont-img-card {
+.contenedor-card img {
     width: 100%;
     margin:auto;
     filter: brightness(0.5) saturate(0.5) contrast(1.2) blur(0.5px);
     transition: filter 200ms linear, transform 200ms linear;
 }
-.cont-img-card:hover {
+.contenedor-card img {
+    width: 240px;
+}
+.contenedor-card img:hover {
     transform: scale(1.1);
     filter: none;
+}
+.img-gt7-mercedes-carrousel {
+    width: 320px !important;
 }
 
 /*Historia */
 .contenedor-historia {
     display:flex;
-    margin:100px 0px 100px 0px;
+    margin:50px 0px 50px 0px;
     flex-direction:column;
     width: 90%;
-    height: 900px;
     margin-left:5%;
-    font-size: 25px;
+    font-size: 20px;
     color:#F3EAEA;
     border-radius:20px;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    gap:25px;
+    gap:15px;
     letter-spacing:2px;
 }
 .contenedor-titulo-historia {
     text-align: center;
-    margin-top:40px;
+    margin-top:20px;
 }
 .contenedor-historia div {
     padding:0px 30px 0px 30px;
@@ -167,7 +183,7 @@ span {
 /*Funciones PS5 */
 .fondo-funciones-ps5 {
     background-image: linear-gradient(to bottom, #c0c0c0, #cccccc, #d7d7d7, #e3e3e3, #efefef, #efefef, #efefef, #efefef, #e3e3e3, #d7d7d7, #cccccc, #c0c0c0);
-
+    width:auto;
 }
 .contenedor-aviso-ps5 {
     display: flex;
@@ -177,29 +193,38 @@ span {
 
 .contenedor-funciones {
     color:black;
-    width:43%;
-    margin-top:20px;
+    width:40%;
+    margin-top:130px;
+}
+.img-ps5-funciones {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.img-ps5-funciones img {
+    height:80%;
 }
 
 .contenedor-funciones ul li {
     list-style-type : square;
-    font-size :18px;
+    font-size :14px;
     margin-top:20px;
     letter-spacing: 2px;
 }
 
 .btn-mas-info {
-    width:340px;
-    height: 55px;
+    width:300px;
+    height: 50px;
     border-radius:35px;
-    font-size: 20px;
+    font-size: 18px;
     border:none;
 }
 .btn-mas-info:hover {
     font-size:20.5px;
 }
 .contenedor-aviso-requerimiento {
-    font-size:18px;
+    font-size:15px;
     margin:50px 0px 0px 200px;
     padding-bottom: 25px; 
 }

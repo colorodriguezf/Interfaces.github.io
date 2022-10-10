@@ -41,8 +41,8 @@ body {
     border: 3px solid #ddd;
     border-top-color: rgba(58, 155, 192, 0.91);
     border-radius: 50%;
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
     animation: spin 1s linear infinite;
 }
 
@@ -51,7 +51,6 @@ body {
     width: 50%;
     height: 20px;
     background-color: #ddd;
-    margin-top: 100px;
 }
   
 #barStatus {
@@ -167,12 +166,134 @@ body {
     margin: auto;
     height: 20px;
 }
+/* Menu desplegable */
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FDFEFE;
+    width: 150px;
+    height: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    padding: 10px;
+    padding-top: 10px;
+    align-items: center;
+}
+  
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    height: 10px;
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    color: black;
+}
 
+.dropdown-content a:nth-child(1){
+    margin-top: 0;
+    background: linear-gradient(180deg, #52B4DA 0%, #2E9FCB 100%);
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
 
+.tick-categories{
+    margin-left: 20px;
+}
+
+.dropdown-content a:hover {
+    background-color: #79C9E8;
+}
+  
+.show {
+    display:block;
+}
 
 .nav-imageuser {
     cursor: pointer;
 }
+
+#modal-perfil {
+    display:none;
+}
+
+ /* RECOMENDADOS */
+ .container-recomendados{
+    display: flex;
+    justify-content:center;
+    gap:5px;
+}
+.recomendados {
+    color:white;
+    text-align:center;
+}
+.juego-recomendado{
+    border:inset 2px yellow;
+}
+
+.container-recomendados-right {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:10px;
+}
+.contenedor-card-recomendados {
+    color:white;
+    display:inline-block;
+    height:auto;
+    width:100px;
+    padding:0;
+    margin:0;
+}
+.contenedor-titulo-recomendados {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color: white;
+    color:black;
+    height:40px;
+    padding:0;
+    margin:0;
+}
+
+.card-derecha {
+    height:240px;
+    width: 107px;
+    margin:0;
+}
+.contenedor-titulo-recomendados-right {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color: white;
+    color:black;
+    height:50px;
+    padding:0;
+    margin:0;
+}
+.contenedor-titulo-recomendados-right {
+    margin:0;
+    font-size: 4px ;
+}
+.img-control {
+    height:20px;
+}
+.img-game{
+display: block;
+object-fit: cover;
+}
+/*-----------------------------------*/
 
 
 /*Footer*/
@@ -244,6 +365,53 @@ footer div {
    display: flex;
    justify-content:space-evenly;
    align-items: center;
+}
+.footer-right-redessociales div:hover {
+    cursor: pointer;
+}
+.contenedor-facebook-footer:hover:after {
+     content: "Facebook";
+     padding: 4px 8px; color: #333;
+     background-color: #385898;
+     color:white;
+     font-weight: bold;
+     position: relative;
+     display: block;
+     margin-top: 0;
+     z-index: 20px;
+     border-radius: 5px;
+     box-shadow: 0px 0px 4px #222;
+     width: 50px;
+     font-size: 10px;
+}
+.contenedor-ig-footer:hover:after {
+    content: "Instagram";
+    padding: 4px 8px; color: #333;
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);    color:white;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    margin-top: 0;
+    z-index: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #222;
+    width: 50px;
+    font-size: 10px;
+}
+.contenedor-twitter-footer:hover:after {
+    content: "Twitter";
+    padding: 4px 8px; color: #333;
+    background-color: #1DA1F2;
+    color:white;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    margin-top: 0;
+    z-index: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px #222;
+    width: 50px;
+    font-size: 10px;
 }
 .svg-fb{
     fill:#3b5998;
@@ -390,6 +558,9 @@ svg {
     .nav-cart{
         margin-right: 10px;
     }
+    #modal-perfil {
+        display:block;
+    }
 
     .modal-perfil {
         position: absolute;
@@ -500,6 +671,22 @@ svg {
     .nav-logo{
         margin-left: 44px;
     }
+    .nav-logo img {
+        width: 70px;
+    }
+    .nav-inputsearch {
+        height: 40px;
+        min-width: 325px;
+    }
+    .nav-center input::placeholder {
+        font-size: 1.5em;
+        font-size: 12px;
+    }
+
+    .nav-buttonsearch {
+        width: 45px;
+        height: 40px;
+    }
 
     .nav-usercointainer {
         margin-right: 56px;
@@ -507,6 +694,7 @@ svg {
 
     .nav-nameuser {
         margin-left: 20px;
+        font-size: 12px;
     }
     
     .nav-cart{
@@ -565,9 +753,12 @@ svg {
         background: #FDFEFE;
         padding:10px 0px 10px 20px;
         border-radius: 10px;
+        z-index: 1;
     }
+ 
+
     .modal-perfil-none {
-        display: none;
+        display: none !important;
     }
 
     .contenedor-info-modal-perfil {
@@ -641,16 +832,23 @@ svg {
     }
     .recomendados {
         color:white;
+        text-align:center;
     }
-    .container-recomendados-left {
-        max-height: 500px;
+    .juego-recomendado {
+        border-radius:10px;
+        border:solid 5px yellow;
     }
+    .juego-recomendado:hover {
+        border:solid 10px yellow;
+        transform: scale(1.1);
+    }
+
     .container-recomendados-left .contenedor-titulo-recomendados h1 {
-        font-size:3rem;
+        font-size:2rem;
     }
     .container-recomendados-right {
         display:grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 1.5rem;
     }
     .contenedor-card-recomendados {
@@ -676,7 +874,8 @@ svg {
         font-size: 25px ;
     }
     .card-derecha {
-        height:260px;
+        height:280px;
+        width: 100%;
         margin:0;
     }
     .contenedor-titulo-recomendados-right {

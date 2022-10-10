@@ -1,3 +1,113 @@
+@media (max-width:768px) {
+    .Carousel{
+        width: 100%;
+        /* margin: 0px 60px; */
+        margin-bottom: 60px !important;
+    }
+    .slick-list{
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        /* height: 304px; */
+        padding: 10px 0px;
+        margin: 0px auto;
+        /* max-width: 90vw; */
+        max-width: 1280px;
+        overflow: hidden !important;
+    }
+
+    .slick-track{
+    position: relative;
+    width:95%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+    .slick-arrow{
+        border-radius: 30px;
+        background-color: #fff;
+        position: absolute;
+        z-index: 4;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+        border: 0;
+        cursor: pointer;
+    }
+    .slick-arrow:focus{
+        outline: 0;
+    }
+    .slick-arrow svg{
+        width: 12px;
+        height: 100%;
+        color: rgba(0,0,0,.7);
+    }
+    .slick-prev{
+        left: 10px;
+    }
+    .slick-next{
+        left: 90vw !important;
+        }
+
+    .contenedor-card {
+        color:white;
+        display:inline-block;
+        height:auto;
+        width:120px !important;
+        padding:0;
+        margin:0;
+    }
+    
+    .img-game{
+        display: block;
+        width: 10%;
+        object-fit: cover;
+        height: 40px;
+    }
+    
+    .contenedor-titulo-card {
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        background-color: white;
+        color:black;
+        height:80px;
+        padding:0;
+        margin:0;
+        font-size: 12px;
+        padding: 0px 10px;
+        gap: 10px;
+    }
+    
+    .contenedor-titulo-card h1 {
+        margin:0;
+        font-size: 12px !important ;
+    }
+    
+    .card {
+        width: 114px !important;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    .Carousel h2{
+        font-size: 13px !important;
+        padding-bottom: 24px;
+        opacity: .9;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        text-align: center;
+        color: white;
+        padding-left: 50px;
+    }
+    
+}
+
+
+
 h2, a{
     margin: 0;
     padding: 0;
@@ -6,7 +116,9 @@ h2, a{
 a{
     text-decoration: none;
 }
-
+.container-carrusels {
+    margin-top:70px;
+}
 .Carousel{
     width: 100%;
     /* margin: 0px 60px; */
@@ -20,7 +132,7 @@ a{
     opacity: .9;
     text-transform: uppercase;
     letter-spacing: 10px;
-    text-align: start;
+    text-align: center;
     color: white;
     padding-left: 50px;
 }
