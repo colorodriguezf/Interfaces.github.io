@@ -1,20 +1,19 @@
-let btnShop = document.getElementById('btn-buy-game');
-let svgCart = document.getElementById('svg-cart');
-let svgTick = document.getElementById('svg-tick');
-
-document.getElementById('btn-buy-game').addEventListener('click', function(e) {
-    if(btnShop.classList.contains( 'btn-buy-game' )) {
-        btnShop.classList.remove('btn-buy-game');
-        btnShop.classList.add('btn-buy-game-tick');
-        svgCart.style.display = 'none';
-        svgTick.style.display = 'block';
-    } else {
-        btnShop.classList.remove('btn-buy-game-tick');
-        btnShop.classList.add('btn-buy-game');
-        svgTick.style.display = 'none';
-        svgCart.style.display = 'block';
+const buttons = document.querySelectorAll('button'); 
+buttons.forEach(e => e.addEventListener('click', function(){ 
+    if(e.id == 'btn-buy-game'){
+        if(e.className == ('btn-buy-game')) {
+            e.classList.remove('btn-buy-game');
+            e.classList.add('btn-buy-game-tick');
+            e.childNodes[1].style.display = 'none';
+            e.childNodes[3].style.display = 'block';
+        } else {
+            e.classList.remove('btn-buy-game-tick');
+            e.classList.add('btn-buy-game');
+            e.childNodes[3].style.display = 'none';
+            e.childNodes[1].style.display = 'block';
+        }
     }
-});
+}));
 
 function App() {}
 

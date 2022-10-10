@@ -2,23 +2,38 @@ var modal = document.getElementById("myModal");
 
 var btn = document.getElementById("openModal");
 
+var btnAddCartAccept = document.getElementById('btn-accept');
+
 var span = document.getElementsByClassName("close")[0];
 
 
+const buttonsModal = document.querySelectorAll('button'); 
+buttonsModal.forEach(e => e.addEventListener('click', function(){ 
+    if(e.id == 'btn-buy-game'){
+        if(e.className == 'btn-buy-game'){
+          modal.style.display = "block";
+        }
+      }
+    }
+));
 
-btn.onclick = function() {
+if (btn){
+  btn.onclick = function() {
   modal.style.display = "block";
+  }
 }
 
-
-
-// Cuando aprieta en la X se cierra el modal, en caso de tener
-
-// span.onclick = function() {
-//   modal.style.display = "none";
+// if(btnCart){
+//   btnCart.onclick = function() {
+//   modal.style.display = "block";
+//   }
 // }
 
-
+if (btnAddCartAccept){
+  btnAddCartAccept.onclick = function(e) {
+    modal.style.display = "none";
+  }
+}
 
 // Cuando aprieta afuera se cierra el modal
 window.onclick = function(event) {

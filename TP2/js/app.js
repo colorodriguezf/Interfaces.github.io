@@ -1,6 +1,7 @@
 "use strict"
 
-document.getElementById("img-perfil").addEventListener("click", toggleModalPerfil); 
+document.getElementById("img-perfil").addEventListener("click", toggleModalPerfil);
+document.getElementById("drop-categories").addEventListener("click", dropCategories);
 
 function toggleModalPerfil() {
     document.getElementById("modal-perfil").classList.toggle("modal-perfil-none");
