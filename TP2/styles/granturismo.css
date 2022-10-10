@@ -1,0 +1,231 @@
+/*Reserva: */
+.contenedor-reserva {
+    height:85vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url('../imgs/granturismo/granturismo1.png');
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenedor-logo-desc-compra {
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+    filter: none;
+}
+
+.contenedor-logo{
+    display:flex;
+    justify-content:center;
+    margin-top:50px
+}
+.contenedor-logo img {
+    width:45%;
+}
+
+.descripcion-juego {
+    display:flex;
+    justify-content:center;
+}
+.descripcion-juego p {  
+    color:white;   
+    font-size: 20px;
+    width:590px;
+    height:108px;
+    top:5px;
+    left:58px;
+}
+
+.contenedor-btn-reservar {
+    display:flex;
+    justify-content:center;
+    margin-top: 50px;
+}
+.btn-reservar {
+    width: 250px;
+    height: 48px;
+    font-size:15px;
+    left: 216px;
+    top: 181px;
+    border: none;
+    border-radius:10px;
+    background-color: #52B4DA;
+    color:white;
+}
+.btn-reservar:hover {
+    font-size:16px;
+    font-weight: bold;
+    background-color: #DA4B9C;
+    color:white;
+}
+
+/* Cards características */
+.slick-track {
+    position: relative;
+    top: 12px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+.cont-caract-cards {
+    background: rgb(27,27,27);
+    background: linear-gradient(0deg, rgb(59, 59, 59) 0%, rgba(31,31,31,1) 16%, rgba(14,15,15,1) 53%, rgba(0,0,0,1) 100%);
+    padding-bottom: 40px;
+}
+.contenedor-caractClave {
+    margin-top: 50px;
+    margin-bottom: 20px;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-caractClave h1 {
+    color:white;
+    margin-bottom: 0px;
+    font-size: 30px;
+}
+.contenedor-caractClave h2 {
+    color: #C9C9C9;
+    font-size: 30px;
+}
+
+.contenedor-cards-informativas {
+    margin-top: 30px;
+    display:flex;
+    justify-content: space-evenly;
+}
+.cont-caract {
+    width:28%;
+    height:28;
+    border-radius: 5px;
+    border:solid 1px rgb(171, 166, 166);
+}
+
+.cont-img-caract img {
+    width:100%;
+    border-radius: 2px;
+}
+.desc-p-caract {
+    margin-top:3px;
+    margin-bottom: 0px;
+    height:100px;
+    color:white;
+    font-size:17px;
+    overflow-wrap: break-word;
+    text-align:center;
+}
+
+.cont-aviso-caract {
+    color:white;
+    margin-top:80px;
+    margin-left:4%;
+    font-size:18px;
+}
+
+
+.contenedor-carrousel-caracteristicas {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 80%;
+}
+
+.contenedor-card img {
+    width: 100%;
+    margin:auto;
+    filter: brightness(0.5) saturate(0.5) contrast(1.2) blur(0.5px);
+    transition: filter 200ms linear, transform 200ms linear;
+}
+.contenedor-card img {
+    width: 240px;
+}
+.contenedor-card img:hover {
+    transform: scale(1.1);
+    filter: none;
+}
+.img-gt7-mercedes-carrousel {
+    width: 320px !important;
+}
+
+/*Historia */
+.contenedor-historia {
+    display:flex;
+    margin:50px 0px 50px 0px;
+    flex-direction:column;
+    width: 90%;
+    margin-left:5%;
+    font-size: 20px;
+    color:#F3EAEA;
+    border-radius:20px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    gap:15px;
+    letter-spacing:2px;
+}
+.contenedor-titulo-historia {
+    text-align: center;
+    margin-top:20px;
+}
+.contenedor-historia div {
+    padding:0px 30px 0px 30px;
+}
+.contenedor-historia span {
+    color:white;
+}
+span {
+    font-weight: bolder;
+}
+
+/*Funciones PS5 */
+.fondo-funciones-ps5 {
+    background-image: linear-gradient(to bottom, #c0c0c0, #cccccc, #d7d7d7, #e3e3e3, #efefef, #efefef, #efefef, #efefef, #e3e3e3, #d7d7d7, #cccccc, #c0c0c0);
+    width:auto;
+}
+.contenedor-aviso-ps5 {
+    display: flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.contenedor-funciones {
+    color:black;
+    width:40%;
+    margin-top:130px;
+}
+.img-ps5-funciones {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.img-ps5-funciones img {
+    height:80%;
+}
+
+.contenedor-funciones ul li {
+    list-style-type : square;
+    font-size :14px;
+    margin-top:20px;
+    letter-spacing: 2px;
+}
+
+.btn-mas-info {
+    width:300px;
+    height: 50px;
+    border-radius:35px;
+    font-size: 18px;
+    border:none;
+}
+.btn-mas-info:hover {
+    font-size:20.5px;
+}
+.contenedor-aviso-requerimiento {
+    font-size:15px;
+    margin:50px 0px 0px 200px;
+    padding-bottom: 25px; 
+}
+    

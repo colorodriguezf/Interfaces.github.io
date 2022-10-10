@@ -1,0 +1,333 @@
+@media (max-width:768px) {
+    .Carousel{
+        width: 100%;
+        /* margin: 0px 60px; */
+        margin-bottom: 60px !important;
+    }
+    .slick-list{
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        /* height: 304px; */
+        padding: 10px 0px;
+        margin: 0px auto;
+        /* max-width: 90vw; */
+        max-width: 1280px;
+        overflow: hidden !important;
+    }
+
+    .slick-track{
+    position: relative;
+    width:95%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+    .slick-arrow{
+        border-radius: 30px;
+        background-color: #fff;
+        position: absolute;
+        z-index: 4;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+        border: 0;
+        cursor: pointer;
+    }
+    .slick-arrow:focus{
+        outline: 0;
+    }
+    .slick-arrow svg{
+        width: 12px;
+        height: 100%;
+        color: rgba(0,0,0,.7);
+    }
+    .slick-prev{
+        left: 10px;
+    }
+    .slick-next{
+        left: 90vw !important;
+    }
+    .slick-prev:active, .slick-next:active {
+        transform: scale(0.9);
+    }
+
+    .contenedor-card {
+        color:white;
+        display:inline-block;
+        height:auto;
+        width:120px !important;
+        padding:0;
+        margin:0;
+    }
+    
+    .img-game{
+        display: block;
+        width: 10%;
+        object-fit: cover;
+        height: 40px;
+    }
+    
+    .contenedor-titulo-card {
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        background-color: white;
+        color:black;
+        height:80px;
+        padding:0;
+        margin:0;
+        font-size: 12px;
+        padding: 0px 10px;
+        gap: 10px;
+    }
+    
+    .contenedor-titulo-card h1 {
+        margin:0;
+        font-size: 12px !important ;
+    }
+    
+    .card {
+        width: 114px !important;
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    .Carousel h2{
+        font-size: 13px !important;
+        padding-bottom: 24px;
+        opacity: .9;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        text-align: center;
+        color: white;
+        padding-left: 50px;
+    }
+    
+}
+
+
+
+h2, a{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+.container-carrusels {
+    margin-top:70px;
+}
+.Carousel{
+    width: 100%;
+    /* margin: 0px 60px; */
+    margin-bottom: 100px;
+}
+
+.Carousel h2{
+    font-size: 26px;
+    line-height: 38px;
+    padding-bottom: 24px;
+    opacity: .9;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    color: white;
+    padding-left: 50px;
+}
+
+/* images */
+
+.slick-list{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    /* height: 304px; */
+    padding: 10px 0px;
+    margin: 0px auto;
+    /* max-width: 90vw; */
+    max-width: 1280px;
+    overflow: hidden;
+}
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+
+/* buttons */
+
+.slick-arrow{
+    border-radius: 30px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+    border: 0;
+    cursor: pointer;
+}
+.slick-arrow:focus{
+    outline: 0;
+}
+.slick-arrow svg{
+    width: 12px;
+    height: 100%;
+    color: rgba(0,0,0,.7);
+}
+.slick-prev{
+    left: 0px;
+}
+.slick-next{
+    right: 0px;
+}
+.slick-prev:active, .slick-next:active {
+    transform: scale(0.9);
+}
+
+.contenedor-card {
+    color:white;
+    display:inline-block;
+    height:auto;
+    width:300px;
+    padding:0;
+    margin:0;
+}
+
+.img-game{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 175px;
+}
+
+.contenedor-titulo-card {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color: white;
+    color:black;
+    height:80px;
+    padding:0;
+    margin:0;
+    font-size: 12px;
+    padding: 0px 10px;
+    gap: 10px;
+}
+
+.contenedor-titulo-card h1 {
+    margin:0;
+    font-size: 25px ;
+}
+
+.card {
+    width: 300px;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.game-price-label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 5px;
+    height: 40px;
+    width: 100px;
+    background: linear-gradient(180deg, #A47C08 0%, #A47C08 0%, #A47C08 0.01%, #EABE3F 100%);
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 50px 0px;
+    position: absolute;
+    top: 0;
+}
+
+.game-price-label h4{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+    color: #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.game-price-label svg{
+    position: relative;
+    top: 4.8%;
+    bottom: 85.2%;
+    margin-left: 10px;
+}
+
+.btn-buy-game{
+    background: rgba(82, 180, 218, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 40px;
+    width: 50px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+
+.btn-buy-game:hover {
+    background: rgba(15, 135, 181, 0.95);
+}
+
+.btn-buy-game-tick{
+    background: rgba(234, 190, 63, 0.95);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 40px;
+    width: 50px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+
+.btn-buy-game-tick:hover {
+    background: #A47C08;
+}
+
+    
+.svg-cart{
+    position: absolute;
+    left: 21%;
+    top: 15%;
+    height: 25px;
+    width: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.svg-tick{
+    display: none;
+    height: 20px;
+    width: 25px;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+}

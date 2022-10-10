@@ -1,0 +1,314 @@
+.game-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.breadcrumb {
+    margin-top: 20px;
+    margin-left: 10%;
+}
+
+.breadcrumb a{
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumb a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.container-button {
+    margin-right: 10%;
+}
+
+.btn{
+    background: rgba(82, 180, 218, 0.75);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 167px;
+    height: 37px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(15, 135, 181, 0.95);
+}
+
+.name-game {
+    color: white;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 0px;
+    margin-left: 10%;
+}
+
+.preview-game {
+    margin: auto;
+    width: 1000px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.preview-game img{
+    display: block;
+    margin: auto;
+}
+
+.container-howtoplay{
+    display: block;
+    margin: auto;
+    margin-top: 65px;
+    width: 90%;
+    height: 818px;
+    background: rgba(217, 217, 217, 0.1);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: 2px solid #DCDEE2;
+    border-radius: 16px;
+    color: white;
+}
+
+.container-howtoplay h2 {
+    margin: 20px;
+    padding-left: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+.howtoplay {
+    margin: 0px 40px;
+}
+
+/* .rectangle-dif { 
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0px;
+    height: 426px;
+    width: 754px;
+}*/
+
+.video-gameplay {
+    margin: auto;
+    margin-bottom:30px;
+}
+
+.video-gameplay video {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    height: 426px;
+    width: 754px;
+    border-radius: 20px;
+}
+
+.container-comments {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px auto;
+    width: 90%;
+    height: 446px;
+    background: rgba(217, 217, 217, 0.1);
+    border: 2px solid #DCDEE2;
+    border-radius: 16px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.add-comment {
+    margin: auto;
+    background: rgba(40, 83, 108, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    height: 138px;
+    width: 100%;
+}
+
+.add-comment img {
+    border-radius: 100px;
+    margin: 13px;
+}
+
+.write-comment {
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 80%;    
+}
+
+.input-icon {
+	position: absolute;
+	left: 198px;
+	top: 30%;
+	transform: translateY(-50%);
+}
+
+.input-wrapper input{
+    margin-left: 20px;
+    background: none;
+    border: 0;
+    width: 80%;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.input-wrapper input:focus { 
+    outline: none;
+}
+
+.btn-comment {
+    display: block;
+    margin-left: auto;
+    margin-right: 78px;
+}
+
+.box-comment {
+    display: flex;
+    margin: auto;
+    background: rgba(40, 83, 108, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    height: 138px;
+    width: 100%;
+    color: white;
+}
+
+.box-comment img {
+    border-radius: 100px;
+    margin-top: 13px;
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-bottom: auto;
+}
+
+.container-writed-comment {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.profile-comment {
+    display: flex;
+    align-items: center;
+}
+
+.profile-comment h3 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.profile-comment p{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    margin-left: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.data-comment p{
+    margin-top: 0;
+}
+
+.container-writed-comment svg{
+    margin-top: 10px;
+    margin-left: -2px;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: #000000;
+    background-color: rgba(0,0,0,0.75); /* Fondo de atras difuminado */
+}
+
+.modal-box {
+    background: #FFFFFF;
+    margin: 20% auto; /* 20% de arriba y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content h1{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+
+.modal-link input{
+    width: 240px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 1px 0px 1px 10px;
+}
+
+.btn-link {
+    text-align: center;
+    width: 100px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 23px;
+}
+
+.btn-link svg{
+    margin-right: 10px;
+}
+
+.modal-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 556px;
+    height: 74px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-top: 20px
+}
+
+.modal-social .icon-fb{
+    margin-left: 25%;
+}
+
+.modal-social .icon-rd{
+    margin-right: 25%;
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
