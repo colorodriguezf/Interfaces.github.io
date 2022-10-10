@@ -898,6 +898,69 @@ svg {
     width: 100%;
     object-fit: cover;
     }
+
+
+    .contenedor-facebook-footer:hover:after {
+        content: "Facebook";
+        padding: 4px 8px; color: #333;
+        background-color: #385898;
+        color:white;
+        font-weight: bold;
+        position: relative;
+        display: block;
+        margin-top: 5px;
+        z-index: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 4px #222;
+        width: 100px;
+        font-size: 16px;
+   }
+   .contenedor-ig-footer:hover:after {
+       content: "Instagram";
+       padding: 4px 8px; color: #333;
+       background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);    color:white;
+       font-weight: bold;
+       position: relative;
+       display: block;
+       margin-top: 0;
+       z-index: 20px;
+       border-radius: 5px;
+       box-shadow: 0px 0px 4px #222;
+       width: 100px;
+       font-size: 16px;
+   }
+   .contenedor-twitter-footer:hover:after {
+       content: "Twitter";
+       padding: 4px 8px; color: #333;
+       background-color: #1DA1F2;
+       color:white;
+       font-weight: bold;
+       position: relative;
+       display: block;
+       margin-top: 0;
+       z-index: 20px;
+       border-radius: 5px;
+       box-shadow: 0px 0px 4px #222;
+       width: 100px;
+       font-size: 16px;
+   }
+
+   .svg-fb{
+    fill:#3b5998;
+    height:30px;
+}
+.svg-ig{
+    fill:rgb(239, 75, 75);
+    height:30px;
+}
+.svg-tw {
+    fill:#1da1f2;
+    height:30px;
+}
+
+svg {
+    pointer-events: none;
+}
     /*-----------------------------------*/
 }
 
