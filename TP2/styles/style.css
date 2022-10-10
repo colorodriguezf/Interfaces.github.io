@@ -235,6 +235,31 @@ body {
     justify-content:center;
     gap:5px;
 }
+.container-recomendados{
+    display: flex;
+    justify-content:center;
+    gap:100px;
+}
+.mas-jugado {
+    position: absolute;
+    background-color: rgb(243, 120, 120);
+    width: 100px;      
+    text-align: center; 
+}
+.proximamente {
+    position: absolute;
+    background-color: rgb(136, 136, 68);
+    width: 100px;
+    text-align: center;
+}
+.mas-jugado h1, .proximamente h1 {
+    margin:0;
+    font-size:bold;
+    font-size:12px;
+}
+.juego-masjugado,.juego-proximamente {
+    border-radius:1px;
+}
 .recomendados {
     color:white;
     text-align:center;
@@ -830,17 +855,33 @@ svg {
         justify-content:center;
         gap:100px;
     }
+    .mas-jugado {
+        position: absolute;
+        background-color: rgb(243, 120, 120);
+        width: 300px;      
+        text-align: center; 
+    }
+    .proximamente {
+        position: absolute;
+        background-color: rgb(136, 136, 68);
+        width: 300px;
+        text-align: center;
+    }
+    .mas-jugado h1, .proximamente h1 {
+        margin:0;
+        font-size:bold;
+        font-size:1.5rem;
+    }
+    .juego-masjugado,.juego-proximamente {
+        border-radius:1px;
+    }
+    .juego-masjugado:hover,  .juego-proximamente:hover {
+        transform: scale(1.1);
+    }
+
     .recomendados {
         color:white;
         text-align:center;
-    }
-    .juego-recomendado {
-        border-radius:10px;
-        border:solid 5px yellow;
-    }
-    .juego-recomendado:hover {
-        border:solid 10px yellow;
-        transform: scale(1.1);
     }
 
     .container-recomendados-left .contenedor-titulo-recomendados h1 {
@@ -849,7 +890,7 @@ svg {
     .container-recomendados-right {
         display:grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1.5rem;
+        grid-gap: 3rem;
     }
     .contenedor-card-recomendados {
         color:white;
