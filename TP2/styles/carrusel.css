@@ -50,7 +50,10 @@
     }
     .slick-next{
         left: 90vw !important;
-        }
+    }
+    .slick-prev:active, .slick-next:active {
+        transform: scale(0.9);
+    }
 
     .contenedor-card {
         color:white;
@@ -187,6 +190,9 @@ a{
 }
 .slick-next{
     right: 0px;
+}
+.slick-prev:active, .slick-next:active {
+    transform: scale(0.9);
 }
 
 .contenedor-card {
