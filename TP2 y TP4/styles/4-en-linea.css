@@ -1,8 +1,194 @@
+/* Entrega TP 4.. jugabilidad */
+@import url('https://fonts.cdnfonts.com/css/arcade-classic');
+.navbar {
+    margin-bottom:50px;
+}
+.reiniciar {
+    display:none;
+}
+.contenedor-form-game {
+    font-family: 'ArcadeClassic', sans-serif;
+    letter-spacing:5px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    width: 45%;
+    margin:auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    font-size:40px;
+}
+
+.form-game {
+    margin-top:-10px;
+}
+.control-music {
+    border-radius: 100%;
+    margin-top: 10px;
+    font-size: 30px;
+}
+.stop {
+    background-color:rgb(165, 165, 165);
+    text-decoration:line-through;
+}
+
+.form-game h1 {
+    text-align: center; 
+}
+.contenedor-h1-game {
+    
+    text-shadow: -2px 0 0 #fdff2a,-4px 0 0 #df4a42,2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+@keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+.form-game p, .form-game label {
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+.dificultad {
+    display:flex;
+    justify-content: center;
+    list-style: none;
+    gap:80px;
+}
+input[type=radio]{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+   }
+.label-dificultad {
+    display:flex;
+    justify-content: center;
+}
+
+#filcol {
+    margin-left:30px;
+    width:80px;
+    border-radius:8px;
+    height:40px;
+    font-size:20px;
+}
+#filcol option {
+    font-size:22px;
+}
+.contenedor-btn-jugar {
+    display:flex;
+    justify-content: center;
+}
+#jugar {
+    font-family: 'ArcadeClassic', sans-serif;
+    width:160px;
+    height:55px;
+    font-size: 35px;
+    border-radius: 10px;
+    color:white;
+    background-color:rgb(63, 63, 63);
+}
+#jugar:hover {
+    background-color: rgb(30, 30, 30);
+    cursor:pointer;
+}
+#jugar:active {
+    background-color: rgb(0, 0, 0);
+    transform: translateY(10px);
+}
+#reiniciar {
+    position: absolute;
+    top: 340px;
+    left: 153px;
+    font-family: 'ArcadeClassic', sans-serif;
+    height: 55px;
+    font-size: 25px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    text-align: center;
+    margin-left: 100px;
+}
+#reiniciar:hover {
+    background-color: rgb(241, 241, 241);
+    cursor:pointer;
+}
+#reiniciar:active {
+    background-color: rgb(164, 164, 164);
+    transform: translateY(10px);
+    border:none;
+    box-shadow: 3px 4px 4px 1px rgb(164, 164, 164);
+}
+.contenedor-tablero-canvas {
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+canvas {
+    outline: #f2eaea 3px solid;
+    margin:auto;
+    /* display:flex; */
+    justify-content:center;
+    background:transparent;
+    outline: #696969 3px solid;
+    display: none;
+}
+
+.utiles {
+    display: inline-block;
+}
+
+
+#contenedorTabla {
+    width: 85%;
+    min-height:95vh;
+    max-height:80vh;
+    background-color: none;
+    text-align:center;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+}
+#contenedorTabla table {    
+    margin:auto;
+    border-spacing: 3px;
+    background-color:#0026df;
+    padding:20px;
+    border-radius:13px;
+    max-width: 80%;
+    z-index:1;
+}
+
+.color {
+    background-color: rgb(6, 6, 6);
+    border-radius: 50%;
+    height:80px;
+    width:80px;
+    margin:15px;
+    border:double 10px #0524b1;
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------- */
 .game-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
 }
 
 .breadcrumb {

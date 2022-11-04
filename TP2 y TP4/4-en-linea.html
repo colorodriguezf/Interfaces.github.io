@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -117,13 +117,19 @@
     <div class="container-game">
         <div class="breadcrumb">
             <a href="">Arcade</a>
-
             <svg width="12" height="12" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M31.301 22.2001L21.914 12.5451L24.3885 10L38 24L24.3885 38L21.914 35.4549L31.301 25.7999H10V22.2001H31.301Z" fill="white"/>
-            </svg>
-                
+            </svg>                
             <a href="">Juegos de Mesa</a>
         </div>
+
+
+
+        
+        <!-- JUEGO -->
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 h1">4 en Linea</span>
+        </nav>
         <div class="game-top">
             <div class="name-game">
                 <p>4 EN LINEA</p>
@@ -134,9 +140,63 @@
                 </button>
             </div>
         </div>
-        <div class="preview-game">
-            <img src="imgs/4-en-linea/image 59.png" alt="4 en linea">
+       
+        <div class="container-fliud  utiles">
+            <div class="row well">
+                <div class="">
+                    <p class="font-weight-normal indicador"></p>
+                </div>
+            </div>
         </div>
+        <div class="container">
+            <button class="reiniciar" type="button" id="reiniciar">Reiniciar</button>
+            <div class="contenedor-form-game">
+                <button onclick="stopMusic()" class="control-music">♫</button>
+                <form action="" class="form-game">
+                    <div class="contenedor-h1-game">
+                        <h1>4 EN LINEA</h1>
+                    </div>
+                    <!-- <label for="">Elija la dimension del tablero</label><select id="filcol">
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select> -->
+                    <label for=""class="label-dificultad">Elija la dimension del tablero</label>
+                    <ul class="dificultad">
+                        <li><input type="radio" name="dificultad" value="4"> 4</li>
+                        <li><input type="radio" name="dificultad" value="5"> 5</li>
+                        <li><input type="radio" name="dificultad" value="6"> 6</li>
+                        <li><input type="radio" name="dificultad" value="7"> 7</li>
+                    </ul>
+                    <p>La dimension del tablero tambien correspondera al numero de fichas en linea para ganar</p>
+                    <div class="contenedor-btn-jugar">
+                        <button type="button" id="jugar">JUGAR</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="container-fliud detalles">
+                <div class="row well">
+                    <div class="">
+                        <canvas id="canvas" class="canvasDibujo" width="900px" height="800px">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+               
+        </div>
+    
+        <!-- ----------------------------------------------------------->
+        
+
+
+
+        
+        <!-- <div class="preview-game">
+            <img src="imgs/4-en-linea/image 59.png" alt="4 en linea">
+        </div> -->
     </div>
     <div class="container-howtoplay">
         <h2>COMO JUGAR A "4 EN LINEA"</h2>
@@ -361,6 +421,12 @@
     </footer>
 
     <script src="js/modal.js"></script>
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
+
+    <!-- Script juego -->
+    <script type="text/javascript" src="js/4-en-linea/ficha.js"></script>
+    <script type="text/javascript" src="js/4-en-linea/tablero.js"></script>
+    <script type="text/javascript" src="js/4-en-linea/juego.js"></script>
+
 </body>
 </html>
