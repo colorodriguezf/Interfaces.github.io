@@ -589,13 +589,7 @@ window.onload = (event) => {
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
-<<<<<<< HEAD:TP2 y TP4/js/4-en-linea/canvas2.js
         chronometerCall = setInterval(chronometer, 1000);
-=======
-        setTimeout(() => {
-            requestAnimationFrame(actualizar);
-        }, 2000)
->>>>>>> cf6c88f16c1947970e41ba54217cb55cf31ac3d4:TP2 y TP4/js/4-en-linea/juego.js
     });
 
     document.getElementById("reiniciar").addEventListener("click", ()=>{
