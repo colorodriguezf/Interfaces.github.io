@@ -11,12 +11,13 @@ function stopMusic() {
         music.pause();
         play = false;
         document.querySelector(".control-music").classList.add("stop");
+        document.querySelector(".control-music-in-game").classList.add("stop");
     }
     else {
         music.play();
         play=true;
         document.querySelector(".control-music").classList.remove("stop");
-
+        document.querySelector(".control-music-in-game").classList.remove("stop");
     }
 }
 window.onload = (event) => {
@@ -331,7 +332,7 @@ window.onload = (event) => {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         canvas.width=canvas.width;
     }
-
+    let jugador_ganador = 0;
     function hayGanador() { // Verifica si hay ganador
         let matriz = tablero.getMatTablero();
         let largo = matriz.length;
@@ -349,6 +350,7 @@ window.onload = (event) => {
                         for (let index = 0; index < ganador.length; index++) {
                             ganador[index].setGanadora(true);
                         }
+                        jugador_ganador = jugador;
                         return true;
                     }
                 }
@@ -454,7 +456,10 @@ window.onload = (event) => {
 
         
         if (tablero.enDropZone(pos.x, pos.y) && (fichaActual != null) && (!ganador)) {
-            console.log("ENTRO");
+            let modal_ganador = document.getElementById("modal-ganador");
+            let contenedor_tablero = document.getElementById("contenedor-tablero");
+            let indicar_ganador = document.getElementById("ganador");
+            let nombre_ganador= "";
             turno = tablero.agregarficha(fichaActual, pos.x, arrFichas, turno);
             // if (fichaActual.getColor() == "Rojo") {
             //     indicador.innerHTML = "Turno Jugador Azul";
@@ -463,8 +468,20 @@ window.onload = (event) => {
             // }
             requestAnimationFrame(actualizar);
             if (hayGanador()) {
+                if(jugador_ganador == 1) {
+                    nombre_ganador = "ROJO";
+                    indicar_ganador.classList.add("ganador-rojo");
+                }
+                else {
+                    nombre_ganador = "AMARILLO";
+                    indicar_ganador.classList.add("ganador-amarillo");
+                }
                 setTimeout(() => {
-                    alert("Delayed for 1 second.");
+                    canvas.style.display="none";
+                    contenedor_tablero.style.display="none";
+                    document.querySelector(".canvasDibujo").style.display = "none";
+                    indicar_ganador.innerHTML = nombre_ganador;
+                    modal_ganador.style.display ="flex";
                 }, 1000)
                 ganador = true;
             }
@@ -478,7 +495,6 @@ window.onload = (event) => {
         }
         fichaActual = null;
     }
-
     canvas.onmousedown = function(event) { //verifica si se hizo click en una ficha
         let pos = getMousePos(canvas, event);
 
@@ -517,7 +533,9 @@ window.onload = (event) => {
         ctx.closePath();
     }
     let filcolumns = 0;
-    document.getElementById("jugar").addEventListener("click", ()=>{ 
+
+    document.getElementById("jugar").addEventListener("click",jugar);
+    function jugar() {
         const play_game = new Audio();
         play_game.src= "./sound-effects/play.mp3";  
         play_game.play();
@@ -525,8 +543,12 @@ window.onload = (event) => {
             document.querySelector(".contenedor-form-game").style.display = "none";
         }, 300)
         setTimeout(() => {
+            document.querySelector(".control-music-in-game").style.display ="flex";
             document.querySelector(".reiniciar").style.display ="flex";
+            document.querySelector(".nuevo-juego").style.display ="flex";
             document.querySelector(".canvasDibujo").style.display = "flex";
+            document.getElementById("contador").style.display = "flex";
+            document.querySelector(".contenedor-tablero").style.display = "flex";
         }, 1000)
         
         let radios = document.getElementsByName('dificultad');
@@ -536,8 +558,6 @@ window.onload = (event) => {
             break;
           }
         }
-
-
          // Funcion donde se inicia el juego
         // cargarImgs();
         arrFichas = [];
@@ -551,10 +571,11 @@ window.onload = (event) => {
         setTimeout(() => {
             requestAnimationFrame(actualizar);
         }, 2000)
-    });
-
-    document.getElementById("reiniciar").addEventListener("click", ()=>{
-        cleanCanvas();
+    };
+    document.getElementById("reiniciar").addEventListener("click",reiniciar);
+    document.getElementById("reiniciar-ganador").addEventListener("click",reiniciar);  
+    function reiniciar() {
+        cleanCanvas();        
         xI = 0;
         yI = 0;
         arrFichas.splice(0, arrFichas.length);
@@ -566,9 +587,135 @@ window.onload = (event) => {
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
-    });
+
+        let element = document.getElementById('canvas');
+        let elementStyle = window.getComputedStyle(element);
+        let display = elementStyle.getPropertyValue('display');
+        if(display == "none") {
+            document.querySelector(".contenedor-tablero").style.display = "flex";
+            document.querySelector(".canvasDibujo").style.display = "flex";
+            document.querySelector(".modal-ganador").style.display = "none";
+        }
+    };
 
 };
+// -----------------CONTADOR-------------
+const tictac = new Audio();
+tictac.src= "./sound-effects/tictac.mp3";
+const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 30;
+const ALERT_THRESHOLD = 15;
+
+const COLOR_CODES = {
+  info: {
+    color: "green"
+  },
+  warning: {
+    color: "orange",
+    threshold: WARNING_THRESHOLD
+  },
+  alert: {
+    color: "red",
+    threshold: ALERT_THRESHOLD
+  }
+};
+
+const TIME_LIMIT = 20;
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+let remainingPathColor = COLOR_CODES.info.color;
+
+document.getElementById("contador").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining ${remainingPathColor}"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+    timeLeft
+  )}</span>
+</div>
+`;
+
+startTimer();
+
+function onTimesUp() {
+  clearInterval(timerInterval);
+}
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+      timeLeft
+    );
+    setCircleDasharray();
+    setRemainingPathColor(timeLeft);
+
+    if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
+}
+
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  if (seconds < 10) {
+      seconds = `0${seconds}`;
+    }
+    if(seconds <= 10) {
+        tictac.play();
+    }
+    if(seconds === 0) {
+        tictac.stop();
+    }
+  
+
+  return `${minutes}:${seconds}`;
+}
+
+function setRemainingPathColor(timeLeft) {
+  const { alert, warning, info } = COLOR_CODES;
+  if (timeLeft <= alert.threshold) {
+    document
+      .getElementById("base-timer-path-remaining").classList.remove(warning.color);
+    document.getElementById("base-timer-path-remaining").classList.add(alert.color);
+  } else if (timeLeft <= warning.threshold) {
+    document.getElementById("base-timer-path-remaining").classList.remove(info.color);
+    document.getElementById("base-timer-path-remaining").classList.add(warning.color);
+  }
+}
+
+function calculateTimeFraction() {
+  const rawTimeFraction = timeLeft / TIME_LIMIT;
+  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
+
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+  document
+    .getElementById("base-timer-path-remaining")
+    .setAttribute("stroke-dasharray", circleDasharray);
+}
+//-------------------- FIN CONTADOR----------------------------------------
 
 
 

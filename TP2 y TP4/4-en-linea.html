@@ -152,7 +152,6 @@
             </div>
         </div>
         <div class="container">
-            <button class="reiniciar" type="button" id="reiniciar">Reiniciar</button>
             <div class="contenedor-form-game">
                 <button onclick="stopMusic()" class="control-music">♫</button>
                 <form action="" class="form-game">
@@ -179,15 +178,26 @@
                     </div>
                 </form>
             </div>
-            
-            <div class="container-fliud detalles">
-                <div class="row well">
-                    <div class="">
+                <div class="modal-ganador contenedor-form-game" id="modal-ganador">        
+                        <h1>GANADOR JUGADOR</h1>
+                        <h1 id="ganador"></h1>
+                        <ul>
+                            <li><a href="4-en-linea.html"><p>Volver al menu principal</p></a></li>
+                            <li> <button class="" type="button" id="reiniciar-ganador">Reiniciar</button></li>
+                        </ul>
+                </div>
+                <div class="contenedor-canvas-menu" id="contenedor-canvas-menu">
+                    <div class="contenedor-tablero" id="contenedor-tablero">
+                        <button onclick="stopMusic()" class="control-music-in-game">♫</button>
+                        <button class="reiniciar" type="button" id="reiniciar">Reiniciar</button>
+                        <div id="contador"></div>
+                        <a href="4-en-linea.html" class="nuevo-juego"><button id="nuevo-juego">Nuevo juego</button></a>
+                    </div>
+                    <div class="contenedor-canvas">
                         <canvas id="canvas" class="canvasDibujo" width="900px" height="800px">
                         </canvas>
                     </div>
                 </div>
-            </div>
                
         </div>
     
@@ -427,8 +437,6 @@
     <!-- <script src="js/app.js"></script> -->
 
     <!-- Script juego -->
-    <script type="text/javascript" src="js/4-en-linea/ficha.js"></script>
-    <script type="text/javascript" src="js/4-en-linea/tablero.js"></script>
     <script type="text/javascript" src="js/4-en-linea/juego.js"></script>
 
 </body>
