@@ -11,6 +11,7 @@ window.onload = (event) => {
     let posXFinTablero = 0;
     let xI = 0;
     let yI = 0;
+    let contadornum = -1;
 
     let canvas = document.querySelector("#canvasDibujo");
     let ctx = canvas.getContext("2d");
@@ -133,12 +134,20 @@ window.onload = (event) => {
         getMatTablero() {
             return tableroMatTablero;
         },
-    
+        
         agregarficha(ficha, x, arrFichas, turno) { // Agrega ficha a la matriz
-            console.log(tableroMatTablero);
+            // console.log("Pos inicial: "+posXIniTablero, "Pos final: " + posXFinTablero)
+            // if((x < posXIniTablero + 110) && (x > posXIniTablero + 70)){
+            //     x = x-20;
+            // }else 
+            // if ((x < posXFinTablero-10) && (x > posXFinTablero - 66)){
+            //     x = x+20;
+            // }
+            if (x > posXIniTablero+200){
+                x = x+30;
+            }
             for (let i = 0; i < tamanioTablero; i++) {
-                console.log(x < (posXIniTablero + (80 * (i + 1))));
-                if (x < (posXIniTablero + (80 * (i + 1)))) {
+                if (x < (posXIniTablero+56 + (70 * (i + 1)))) {
                     for (let j = tableroMatTablero[i].length - 1; j >= 0; j--) {
                         if (tableroMatTablero[i][j] == null) {
                             tableroMatTablero[i][j] = ficha;
@@ -160,7 +169,7 @@ window.onload = (event) => {
     
         eliminarFicha(arrFichas) { // Elimina ficha de arreglo de las fichas totales
             for (let i = 0; i < arrFichas.length; i++) {
-                console.log(arrFichas[i].getEnTablero());
+                // console.log(arrFichas[i].getEnTablero());
                 if (arrFichas[i].getEnTablero()) {
                     arrFichas.splice(i, 1);
                     break;
@@ -230,8 +239,16 @@ window.onload = (event) => {
         posXIniTablero = PosInicialTableroX;
         posXFinTablero = x;
         // ctx.drawImage(drop, PosInicialTableroX , PosInicialTableroY - 80);
-
         // -------------------------------------------------------------------------------------------------
+
+        ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+        ctx.font = '40pt Kremlin Pro Web';
+        ctx.fillStyle = '#f00';
+        if (contadornum === -1){
+            ctx.fillText('Start', 350, 150);
+        }else {
+            ctx.fillText('Start '+contadornum, 350, 150);
+        } 
     }
 
     function cargarFichasEnArreglo(filcol) {  // Carga las fichas en un arreglo
@@ -406,6 +423,33 @@ window.onload = (event) => {
         return [];
     }
 
+    var rect = {
+        x:100,
+        y:50,
+        width:200,
+        height:100
+    };
+
+    function DentroDeButton(pos, rect){
+        return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+    }
+
+    canvas.addEventListener('click', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+    
+        if (DentroDeButton(mousePos,rect)) {
+            alert('Hice click en el boton');
+        }
+    }, false);
+
+    // function RenderCont(){
+    //     ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+    //     ctx.font = '40pt Kremlin Pro Web';
+    //     ctx.fillStyle = '#f00';
+    //     contadornum++;
+    //     ctx.fillText('Start'+contadornum, 345, 415);
+    // }
+
     function getMousePos(canvas, event) { //devuelve la posicion del click en el canvas
         let rect = canvas.getBoundingClientRect();
         return { x: event.clientX - rect.left, y: event.clientY - rect.top };
@@ -425,7 +469,6 @@ window.onload = (event) => {
 
         
         if (tablero.enDropZone(pos.x, pos.y) && (fichaActual != null) && (!ganador)) {
-            console.log("ENTRO");
             turno = tablero.agregarficha(fichaActual, pos.x, arrFichas, turno);
             // if (fichaActual.getColor() == "Rojo") {
             //     indicador.innerHTML = "Turno Jugador Azul";
@@ -438,6 +481,7 @@ window.onload = (event) => {
                     alert("Delayed for 1 second.");
                 }, 1000)
                 ganador = true;
+                clearInterval(chronometerCall);
             }
             
 
@@ -484,8 +528,13 @@ window.onload = (event) => {
         for (let index = 0; index < arrFichas.length; index++) {
             arrFichas[index].drawFicha(ctx);
         }
-        
-        ctx.closePath();
+    }
+
+    function chronometer() {
+
+        contadornum++;
+        requestAnimationFrame(actualizar);
+    
     }
 
     document.getElementById("boton").addEventListener("click", ()=>{  // Funcion donde se inicia el juego
@@ -499,6 +548,7 @@ window.onload = (event) => {
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
+        chronometerCall = setInterval(chronometer, 1000);
     });
 
     document.getElementById("reiniciar").addEventListener("click", ()=>{
@@ -515,5 +565,6 @@ window.onload = (event) => {
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
+        contadornum = -1;
     });
 };
