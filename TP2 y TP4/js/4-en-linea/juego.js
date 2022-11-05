@@ -576,7 +576,7 @@ window.onload = (event) => {
         setTimeout(function(){
             requestAnimationFrame(actualizar);
         }, 2000)
-    });
+    }
 
     document.getElementById("reiniciar").addEventListener("click", ()=>{
         cleanCanvas();
