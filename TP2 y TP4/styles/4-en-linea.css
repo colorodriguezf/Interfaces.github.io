@@ -1,3 +1,20 @@
+/* CONTADOR */
+/* @font-face {
+    font-family: 'Digital Display';
+    src: url('https://praxeds.github.io/scrimba-basketball-scoreboard/Assets/Digital-Display.woff2') format('woff2'),
+        url('https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+h2 {
+    font-family: 'Digital Display',monospace;
+    font-size: 15.625rem;
+    text-align: center;
+    color: orange;
+    padding-top: 0.18em;
+  } */
+
 /* Entrega TP 4.. jugabilidad */
 @import url('https://fonts.cdnfonts.com/css/arcade-classic');
 .navbar {
