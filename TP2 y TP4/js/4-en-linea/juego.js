@@ -20,6 +20,7 @@ function stopMusic() {
         document.querySelector(".control-music-in-game").classList.remove("stop");
     }
 }
+
 window.onload = (event) => {
     "use strict";
 
@@ -33,9 +34,13 @@ window.onload = (event) => {
     let posXFinTablero = 0;
     let xI = 0;
     let yI = 0;
+    let contadornum = -1;
 
     let canvas = document.querySelector("#canvas");
     let ctx = canvas.getContext("2d");
+
+    // let imageFondoTablero = new Image();
+    // imageFondoTablero.src = "imgs/4-en-linea/fondo-tablero.png";
 
 
     // Se empezo usando clases, pero no funcionaba la implementacion por lo que los getter y setter quedaron
@@ -155,7 +160,7 @@ window.onload = (event) => {
         getMatTablero() {
             return tableroMatTablero;
         },
-    
+        
         agregarficha(ficha, x, arrFichas, turno) { // Agrega ficha a la matriz
             // console.log("Pos inicial: "+posXIniTablero, "Pos final: " + posXFinTablero)
             // if((x < posXIniTablero + 110) && (x > posXIniTablero + 70)){
@@ -190,7 +195,7 @@ window.onload = (event) => {
     
         eliminarFicha(arrFichas) { // Elimina ficha de arreglo de las fichas totales
             for (let i = 0; i < arrFichas.length; i++) {
-                console.log(arrFichas[i].getEnTablero());
+                // console.log(arrFichas[i].getEnTablero());
                 if (arrFichas[i].getEnTablero()) {
                     arrFichas.splice(i, 1);
                     break;
@@ -199,7 +204,7 @@ window.onload = (event) => {
         },
 
         enDropZone(x, y) {  // Verifica que se suelte la ficha dentro del tablero
-            if (((x - MEDIDA_CUADRO) > posXIniTablero) && ( x < posXFinTablero) && (y < (posXFinTablero - MEDIDA_CUADRO)) && (y - 10 > posXIniTablero)) {
+            if (((x - MEDIDA_CUADRO) > posXIniTablero) && ( x < posXFinTablero) && (y < (posXFinTablero - MEDIDA_CUADRO)) && (y - 5 > posXIniTablero-150)) {
                 return true;
             } else {
                 return false;
@@ -211,7 +216,7 @@ window.onload = (event) => {
             for (let i = 0; i < tamanioTablero; i++) {
                 x = (posXIniTablero + (66 * i))+50;
                 for (let j = 0; j < tamanioTablero; j++) {
-                    y = posXIniTablero + (65 * j);
+                    y = posXIniTablero + (65 * j) - 145;
                     if (tableroMatTablero[i][j] != null) {
                         if(tableroMatTablero[i][j].color != "Rojo"){
                             tableroMatTablero[i][j].drawFichaEn(ctx, (x+30), (y+33));
@@ -233,8 +238,10 @@ window.onload = (event) => {
         let imageFondo = new Image();
         imageFondo.src = "imgs/4-en-linea/cbox.png";
 
-        let drop = new Image();
-        drop.src = "imgs/4-en-linea/drop.png";
+        // let drop = new Image();
+        // drop.src = "imgs/4-en-linea/drop.png";
+
+        // ctx.drawImage(imageFondoTablero,0 , 0);
 
         let matrix = crearMatrizIdentidad(filcol, imageFondo);
 
@@ -243,13 +250,13 @@ window.onload = (event) => {
         
         
         // Comenzar a dibujar
-        let PosInicialTableroY = (((canvas.width-100) / 2) - (filcol/2)*MEDIDA_CUADRO), 
-            PosInicialTableroX = (canvas.height / 2- (filcol/2)*MEDIDA_CUADRO), 
+        let PosInicialTableroY = (((canvas.width-130) / 2) - (filcol/2)*MEDIDA_CUADRO), 
+            PosInicialTableroX = ((canvas.height+300) / 2- (filcol/2)*MEDIDA_CUADRO), 
             x = PosInicialTableroX, 
-            y = PosInicialTableroY;
+            y = PosInicialTableroY - 130;
 
         for (const fila of matrix) {  //Dibuja el tablero
-            x = ((canvas.height+100) / 2- (filcol/2)*MEDIDA_CUADRO);
+            x = ((canvas.height+400) / 2- (filcol/2)*MEDIDA_CUADRO);
             for (const cuadro of fila) {
                 ctx.drawImage(imageFondo, x, y);
                 x += MEDIDA_CUADRO;
@@ -260,7 +267,6 @@ window.onload = (event) => {
         posXIniTablero = PosInicialTableroX;
         posXFinTablero = x;
         // ctx.drawImage(drop, PosInicialTableroX , PosInicialTableroY - 80);
-
         // -------------------------------------------------------------------------------------------------
     }
 
@@ -287,7 +293,7 @@ window.onload = (event) => {
         for (let index = 0; index < fichasTotales; index++) {
             if (index % 2 == 0) {
                 fichaPosX = 90;
-                fichaPosY = (((canvas.width-100) / 2) + (filcol/2)*MEDIDA_CUADRO) - (13 * index + 1) - 30;
+                fichaPosY = (((canvas.width-120) / 2) + (filcol/2)*MEDIDA_CUADRO) - (13 * index + 1) - 170;
                     // 690 - (13 * index + 1);
                 color = "Rojo";
                 img = imageFichaRoja;
@@ -296,7 +302,7 @@ window.onload = (event) => {
                 jugador = 1;
             } else {
                 fichaPosX = canvas.width - 90;
-                fichaPosY = (((canvas.width-100) / 2) + (filcol/2)*MEDIDA_CUADRO) - (13 * index + 1) - 30;
+                fichaPosY = (((canvas.width-100) / 2) + (filcol/2)*MEDIDA_CUADRO) - (13 * index + 1) - 170;
                     // 700 - (13 * index + 1);
                 color = "Amarillo";
                 img = imageFichaAmarilla;
@@ -311,7 +317,6 @@ window.onload = (event) => {
         for (let index = 0; index < fichasTotales; index++) {
             arrFichas[index].drawFicha(ctx);
         }
-
     }
 
     function crearMatrizIdentidad(filcol, imageFondo) {  //Crea la matriz del tablero
@@ -456,10 +461,7 @@ window.onload = (event) => {
 
         
         if (tablero.enDropZone(pos.x, pos.y) && (fichaActual != null) && (!ganador)) {
-            let modal_ganador = document.getElementById("modal-ganador");
-            let contenedor_tablero = document.getElementById("contenedor-tablero");
-            let indicar_ganador = document.getElementById("ganador");
-            let nombre_ganador= "";
+            console.log("ENTRO");
             turno = tablero.agregarficha(fichaActual, pos.x, arrFichas, turno);
             // if (fichaActual.getColor() == "Rojo") {
             //     indicador.innerHTML = "Turno Jugador Azul";
@@ -529,9 +531,8 @@ window.onload = (event) => {
         for (let index = 0; index < arrFichas.length; index++) {
             arrFichas[index].drawFicha(ctx);
         }
-        
-        ctx.closePath();
     }
+
     let filcolumns = 0;
 
     document.getElementById("jugar").addEventListener("click",jugar);
@@ -562,41 +563,39 @@ window.onload = (event) => {
         // cargarImgs();
         arrFichas = [];
         let filcol = parseInt(filcolumns) + parseInt(2);
-        fichasTotales = (filcol*filcol)/2;
+        if ((filcol % 2) == 0){
+            fichasTotales = (filcol*filcol)/2;
+        }else {
+            fichasTotales = Math.round((filcol*filcol)/2)-1;
+        }
         tamanioTablero = filcol;
         cleanCanvas();
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
-        setTimeout(() => {
+        setTimeout(function(){
             requestAnimationFrame(actualizar);
         }, 2000)
-    };
-    document.getElementById("reiniciar").addEventListener("click",reiniciar);
-    document.getElementById("reiniciar-ganador").addEventListener("click",reiniciar);  
-    function reiniciar() {
-        cleanCanvas();        
+    });
+
+    document.getElementById("reiniciar").addEventListener("click", ()=>{
+        cleanCanvas();
         xI = 0;
         yI = 0;
         arrFichas.splice(0, arrFichas.length);
         turno = 1;
         ganador = false;
         let filcol = parseInt(filcolumns) + parseInt(2);
-        fichasTotales = (filcol*filcol)/2;
+        if ((filcol % 2) == 0){
+            fichasTotales = (filcol*filcol)/2;
+        }else {
+            fichasTotales = Math.round((filcol*filcol)/2)-1;
+        }
         tamanioTablero = filcol;
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
-
-        let element = document.getElementById('canvas');
-        let elementStyle = window.getComputedStyle(element);
-        let display = elementStyle.getPropertyValue('display');
-        if(display == "none") {
-            document.querySelector(".contenedor-tablero").style.display = "flex";
-            document.querySelector(".canvasDibujo").style.display = "flex";
-            document.querySelector(".modal-ganador").style.display = "none";
-        }
-    };
+    });
 
 };
 // -----------------CONTADOR-------------
