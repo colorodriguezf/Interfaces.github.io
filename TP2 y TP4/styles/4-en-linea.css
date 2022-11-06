@@ -1,20 +1,3 @@
-/* CONTADOR */
-/* @font-face {
-    font-family: 'Digital Display';
-    src: url('https://praxeds.github.io/scrimba-basketball-scoreboard/Assets/Digital-Display.woff2') format('woff2'),
-        url('https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-h2 {
-    font-family: 'Digital Display',monospace;
-    font-size: 15.625rem;
-    text-align: center;
-    color: orange;
-    padding-top: 0.18em;
-  } */
-
 /* Entrega TP 4.. jugabilidad */
 @import url('https://fonts.cdnfonts.com/css/arcade-classic');
 .navbar {
@@ -22,6 +5,14 @@ h2 {
 }
 .reiniciar {
     display:none;
+}
+.nuevo-juego {
+    display:none;
+    text-decoration: none;
+}
+.control-music-in-game {
+    display:none;
+    margin-left: 20px;
 }
 .contenedor-form-game {
     font-family: 'ArcadeClassic', sans-serif;
@@ -40,10 +31,13 @@ h2 {
 .form-game {
     margin-top:-10px;
 }
-.control-music {
+.control-music, .control-music-in-game {
     border-radius: 100%;
     margin-top: 10px;
     font-size: 30px;
+}
+.control-music:hover, .control-music-in-game:hover {
+    cursor: pointer;
 }
 .stop {
     background-color:rgb(165, 165, 165);
@@ -53,14 +47,12 @@ h2 {
 .form-game h1 {
     text-align: center; 
 }
-.contenedor-h1-game {
-    
+.contenedor-h1-game {    
     text-shadow: -2px 0 0 #fdff2a,-4px 0 0 #df4a42,2px 0 0 #91fcfe, 4px 0 0 #4405fc;
     animation-name: parpadeo;
     animation-duration: 2s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    
+    animation-iteration-count: infinite;    
 }
 @keyframes parpadeo {  
     0% { opacity: 1.0; }
@@ -79,11 +71,14 @@ h2 {
     list-style: none;
     gap:80px;
 }
-input[type=radio]{
+input[name=dificultad]{
     height: 25px;
     width: 25px;
     border-radius: 100%;
    }
+input[name=dificultad]:hover {
+    cursor: pointer;
+}
 .label-dificultad {
     display:flex;
     justify-content: center;
@@ -120,27 +115,34 @@ input[type=radio]{
     background-color: rgb(0, 0, 0);
     transform: translateY(10px);
 }
-#reiniciar {
-    position: absolute;
-    top: 340px;
-    left: 153px;
+.contenedor-tablero {
+    display: none;
+    justify-content: space-around;
+    align-items:center;
+    margin:auto;
+    width: 900px;
+    padding-bottom: 10px;
+    background-color: white;
+    border: #f2eaea 3px solid;
+}
+#reiniciar, #nuevo-juego {
     font-family: 'ArcadeClassic', sans-serif;
-    height: 55px;
-    font-size: 25px;
-    border-radius: 10px;
+    height: 35px;
+    font-size: 15px;
+    border-radius: 7px;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     align-items: center;
     text-align: center;
-    margin-left: 100px;
+    margin-left: 20px;
 }
-#reiniciar:hover {
+#reiniciar:hover, #nuevo-juego:hover {
     background-color: rgb(241, 241, 241);
     cursor:pointer;
 }
-#reiniciar:active {
+#reiniciar:active, #nuevo-juego:active {
     background-color: rgb(164, 164, 164);
-    transform: translateY(10px);
+    transform: translateY(5px);
     border:none;
     box-shadow: 3px 4px 4px 1px rgb(164, 164, 164);
 }
@@ -152,7 +154,6 @@ input[type=radio]{
 canvas {
     outline: #f2eaea 3px solid;
     margin:auto;
-    /* display:flex; */
     justify-content:center;
     background:transparent;
     outline: #696969 3px solid;
@@ -193,15 +194,102 @@ canvas {
     border:double 10px #0524b1;
 }
 
+.modal-ganador {
+    display: none;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    align-items: center;
+    color:black;
+    font-size:25px;
+}
+
+.ganador-rojo {
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;    
+    color:red;
+}
+.ganador-amarillo {
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;    
+    color:#bbbb16;
+}
 
 
+/* CONTADOR */
+ @font-face {
+    font-family: 'Digital Display';
+    src: url('https://praxeds.github.io/scrimba-basketball-scoreboard/Assets/Digital-Display.woff2') format('woff2'),
+        url('https://praxeds.github.io/basketball-scoreboard/Assets/Digital-Display.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+#contador {
+    display:none;
+}
+.base-timer {
+    position: relative;
+    width: 90px;
+    height: 90px;
+  }
+  
+  .base-timer__svg {
+    transform: scaleX(-1);
+  }
+  
+  .base-timer__circle {
+    fill: none;
+    stroke: none;
+  }
+  
+  .base-timer__path-elapsed {
+    stroke-width: 5px;
+    stroke: grey;
+  }
+  
+  .base-timer__path-remaining {
+    stroke-width: 5px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+  }
+  
+  .base-timer__path-remaining.green {
+    color: rgb(65, 184, 131);
+  }
+  
+  .base-timer__path-remaining.orange {
+    color: orange;
+  }
+  
+  .base-timer__path-remaining.red {
+    color: red;
+  }
+  
+  .base-timer__label {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-family: 'Digital Display',monospace;
+    text-align: center;
+    color: rgb(255, 0, 0);
+  }
+  /* ------------------------------- */
 
 
-
-
-
-
-/* ------------------------------- */
 .game-top {
     display: flex;
     justify-content: space-between;
