@@ -364,6 +364,22 @@ window.onload = (event) => {
                 }
             }
         }
+
+        if(arrFichas.length == 0){
+            tictac.pause();
+                let nombre_ganador = "EMPATE";
+                indicar_ganador.classList.add("empate");
+                setTimeout(() => {
+                    canvas.style.display="none";
+                    contenedor_tablero.style.display="none";
+                    document.querySelector(".canvasDibujo").style.display = "none";
+                    document.getElementById("hayGanador").innerHTML = "EL TIEMPO TERMINO";
+                    indicar_ganador.innerHTML = nombre_ganador;
+                    modal_ganador.style.display ="flex";
+                    document.querySelector(".ganadorYimg").classList.remove("ganadorYimg");
+                    music.pause();
+                }, 1000)
+        }
         return false;
     }
 
@@ -651,7 +667,7 @@ window.onload = (event) => {
       }
     };
     
-    let TIME_LIMIT = 10;
+    let TIME_LIMIT = 300;
     let timePassed = 0;
     let timeLeft = TIME_LIMIT;
     let timerInterval = null;
@@ -720,7 +736,7 @@ window.onload = (event) => {
         }
         if(time == 0) {
             tictac.pause();
-               let nombre_ganador = "EMPATE";
+                let nombre_ganador = "EMPATE";
                 indicar_ganador.classList.add("empate");
                 setTimeout(() => {
                     canvas.style.display="none";
