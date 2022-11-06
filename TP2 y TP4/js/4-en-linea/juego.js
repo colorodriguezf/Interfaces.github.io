@@ -607,7 +607,6 @@ window.onload = (event) => {
 
     document.getElementById("reiniciar").addEventListener("click", reiniciar);
     function reiniciar(){
-        console.log("ENTRO");
         cleanCanvas();
         xI = 0;
         yI = 0;
@@ -624,7 +623,11 @@ window.onload = (event) => {
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
-        // TIME_LIMIT =300;
+        onTimesUp();
+        renderContador();
+        setTimeout(function(){
+            requestAnimationFrame(actualizar);
+        }, 1000);
     }
 
     // -----------------CONTADOR-------------
@@ -654,32 +657,40 @@ window.onload = (event) => {
     let timerInterval = null;
     let remainingPathColor = COLOR_CODES.info.color;
     
-    document.getElementById("contador").innerHTML = `
-    <div class="base-timer">
-      <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <g class="base-timer__circle">
-          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-          <path
-            id="base-timer-path-remaining"
-            stroke-dasharray="283"
-            class="base-timer__path-remaining ${remainingPathColor}"
-            d="
-              M 50, 50
-              m -45, 0
-              a 45,45 0 1,0 90,0
-              a 45,45 0 1,0 -90,0
-            "
-          ></path>
-        </g>
-      </svg>
-      <span id="base-timer-label" class="base-timer__label">${formatTime(
-        timeLeft
-      )}</span>
-    </div>
-    `;
+   function renderContador() {
+        document.getElementById("contador").innerHTML = `
+        <div class="base-timer">
+        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g class="base-timer__circle">
+            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+            <path
+                id="base-timer-path-remaining"
+                stroke-dasharray="283"
+                class="base-timer__path-remaining ${remainingPathColor}"
+                d="
+                M 50, 50
+                m -45, 0
+                a 45,45 0 1,0 90,0
+                a 45,45 0 1,0 -90,0
+                "
+            ></path>
+            </g>
+        </svg>
+        <span id="base-timer-label" class="base-timer__label">${formatTime(
+            timeLeft
+        )}</span>
+        </div>
+        `;
+    };
+
+    renderContador();
+    
     
     function onTimesUp() {
       clearInterval(timerInterval);
+      TIME_LIMIT =300;
+      timePassed= 0;
+      startTimer();
     }
     
     function startTimer() {
