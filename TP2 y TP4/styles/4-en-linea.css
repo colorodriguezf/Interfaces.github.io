@@ -6,7 +6,7 @@
 .reiniciar {
     display:none;
 }
-.nuevo-juego {
+.nuevo-juego, .salir {
     display:none;
     text-decoration: none;
 }
@@ -136,7 +136,14 @@ input[name=dificultad]:hover {
     text-align: center;
     margin-left: 20px;
 }
-#reiniciar:hover, #nuevo-juego:hover {
+#salir {
+    border-radius: 50%;
+    background-color: rgb(244, 67, 67);
+    width: 40px;
+    height:40px;
+}
+
+#reiniciar:hover, #nuevo-juego:hover{
     background-color: rgb(241, 241, 241);
     cursor:pointer;
 }
@@ -145,6 +152,17 @@ input[name=dificultad]:hover {
     transform: translateY(5px);
     border:none;
     box-shadow: 3px 4px 4px 1px rgb(164, 164, 164);
+}
+#salir:hover {
+    background-color: rgb(251, 0, 0);
+    cursor:pointer;
+    color:white;
+}
+#salir:active {
+    background-color: rgb(165, 0, 0);
+    transform: translateY(5px);
+    border:none;
+    box-shadow: 3px 4px 4px 1px rgb(91, 0, 0);
 }
 .ganadorYimg {
     display:flex;

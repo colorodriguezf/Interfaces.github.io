@@ -565,6 +565,7 @@ window.onload = (event) => {
             document.querySelector(".control-music-in-game").style.display ="flex";
             document.querySelector(".reiniciar").style.display ="flex";
             document.querySelector(".nuevo-juego").style.display ="flex";
+            document.querySelector(".salir").style.display ="flex";
             document.querySelector(".canvasDibujo").style.display = "flex";
             document.getElementById("contador").style.display = "flex";
             document.querySelector(".contenedor-tablero").style.display = "flex";
