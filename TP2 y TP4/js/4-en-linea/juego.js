@@ -595,6 +595,7 @@ window.onload = (event) => {
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
+        requestAnimationFrame(actualizar);
     });
 
 };
