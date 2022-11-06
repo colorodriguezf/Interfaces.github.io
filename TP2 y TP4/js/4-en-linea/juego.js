@@ -38,8 +38,8 @@ window.onload = (event) => {
     let canvas = document.querySelector("#canvas");
     let ctx = canvas.getContext("2d");
 
-    // let imageFondoTablero = new Image();
-    // imageFondoTablero.src = "imgs/4-en-linea/fondo-tablero.png";
+    let imageFondoTablero = new Image();
+    imageFondoTablero.src = "imgs/4-en-linea/fondo-tablero.png";
 
 
     // Se empezo usando clases, pero no funcionaba la implementacion por lo que los getter y setter quedaron
@@ -240,7 +240,7 @@ window.onload = (event) => {
         // let drop = new Image();
         // drop.src = "imgs/4-en-linea/drop.png";
 
-        // ctx.drawImage(imageFondoTablero,0 , 0);
+        ctx.drawImage(imageFondoTablero,0 , 0);
 
         let matrix = crearMatrizIdentidad(filcol, imageFondo);
 
