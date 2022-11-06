@@ -162,6 +162,9 @@ window.onload = (event) => {
         },
         
         agregarficha(ficha, x, arrFichas, turno) { // Agrega ficha a la matriz
+            const ponerficha = new Audio();
+            ponerficha.src= "./sound-effects/ficha.mp3";   
+            ponerficha.play();
             // console.log("Pos inicial: "+posXIniTablero, "Pos final: " + posXFinTablero)
             // if((x < posXIniTablero + 110) && (x > posXIniTablero + 70)){
             //     x = x-20;
@@ -449,6 +452,11 @@ window.onload = (event) => {
 
     let turno = 1;
     let ganador = false;
+    let modal_ganador = document.getElementById("modal-ganador");
+    let contenedor_tablero = document.getElementById("contenedor-tablero");
+    let indicar_ganador = document.getElementById("ganador");
+    let nombre_ganador = "";
+
     canvas.onmouseup = function(event) {
         let pos = getMousePos(canvas, event);
         if (fichaActual != null) {
@@ -461,7 +469,6 @@ window.onload = (event) => {
 
         
         if (tablero.enDropZone(pos.x, pos.y) && (fichaActual != null) && (!ganador)) {
-            console.log("ENTRO");
             turno = tablero.agregarficha(fichaActual, pos.x, arrFichas, turno);
             // if (fichaActual.getColor() == "Rojo") {
             //     indicador.innerHTML = "Turno Jugador Azul";
@@ -470,24 +477,35 @@ window.onload = (event) => {
             // }
             requestAnimationFrame(actualizar);
             if (hayGanador()) {
+                let img_ganador = document.querySelectorAll(".imgGanador");
+                let imgsrc = ""
+                clearInterval(timerInterval);
                 if(jugador_ganador == 1) {
                     nombre_ganador = "ROJO";
                     indicar_ganador.classList.add("ganador-rojo");
+                    imgsrc ="imgs/4-en-linea/fichaRoja.png";
                 }
                 else {
                     nombre_ganador = "AMARILLO";
                     indicar_ganador.classList.add("ganador-amarillo");
+                    imgsrc ="imgs/4-en-linea/fichaAmarilla.png";
+
+                }
+                for(let i = 0; i < img_ganador.length; i++) {
+                    console.log("E");
+                    img_ganador[i].src=imgsrc;
                 }
                 setTimeout(() => {
                     canvas.style.display="none";
                     contenedor_tablero.style.display="none";
                     document.querySelector(".canvasDibujo").style.display = "none";
+                    document.getElementById("hayGanador").innerHTML="GANADOR JUGADOR";
                     indicar_ganador.innerHTML = nombre_ganador;
                     modal_ganador.style.display ="flex";
+                    music.pause();
                 }, 1000)
                 ganador = true;
-            }
-            
+            }  
 
         } else if (fichaActual != null) {
             fichaActual.setX(xI);
@@ -575,10 +593,21 @@ window.onload = (event) => {
         canvasDraw(filcol);
         setTimeout(function(){
             requestAnimationFrame(actualizar);
-        }, 2000)
+        }, 2000);
+        startTimer();
     }
 
-    document.getElementById("reiniciar").addEventListener("click", ()=>{
+    document.getElementById("reiniciar-ganador").addEventListener("click",()=>{
+        canvas.style.display="flex";
+        contenedor_tablero.style.display="flex";
+        document.querySelector(".canvasDibujo").style.display = "flex";
+        modal_ganador.style.display ="none";
+        reiniciar();
+    });
+
+    document.getElementById("reiniciar").addEventListener("click", reiniciar);
+    function reiniciar(){
+        console.log("ENTRO");
         cleanCanvas();
         xI = 0;
         yI = 0;
@@ -595,126 +624,132 @@ window.onload = (event) => {
         cargarFichasEnArreglo(filcol);
         tablero.cargarTablero();
         canvasDraw(filcol);
-    });
-
-};
-// -----------------CONTADOR-------------
-const tictac = new Audio();
-tictac.src= "./sound-effects/tictac.mp3";
-const FULL_DASH_ARRAY = 283;
-const WARNING_THRESHOLD = 30;
-const ALERT_THRESHOLD = 15;
-
-const COLOR_CODES = {
-  info: {
-    color: "green"
-  },
-  warning: {
-    color: "orange",
-    threshold: WARNING_THRESHOLD
-  },
-  alert: {
-    color: "red",
-    threshold: ALERT_THRESHOLD
-  }
-};
-
-const TIME_LIMIT = 20;
-let timePassed = 0;
-let timeLeft = TIME_LIMIT;
-let timerInterval = null;
-let remainingPathColor = COLOR_CODES.info.color;
-
-document.getElementById("contador").innerHTML = `
-<div class="base-timer">
-  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g class="base-timer__circle">
-      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-      <path
-        id="base-timer-path-remaining"
-        stroke-dasharray="283"
-        class="base-timer__path-remaining ${remainingPathColor}"
-        d="
-          M 50, 50
-          m -45, 0
-          a 45,45 0 1,0 90,0
-          a 45,45 0 1,0 -90,0
-        "
-      ></path>
-    </g>
-  </svg>
-  <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
-  )}</span>
-</div>
-`;
-
-startTimer();
-
-function onTimesUp() {
-  clearInterval(timerInterval);
-}
-
-function startTimer() {
-  timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
-    document.getElementById("base-timer-label").innerHTML = formatTime(
-      timeLeft
-    );
-    setCircleDasharray();
-    setRemainingPathColor(timeLeft);
-
-    if (timeLeft === 0) {
-      onTimesUp();
+        // TIME_LIMIT =300;
     }
-  }, 1000);
-}
 
-function formatTime(time) {
-  const minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-
-  if (seconds < 10) {
-      seconds = `0${seconds}`;
+    // -----------------CONTADOR-------------
+    const tictac = new Audio();
+    tictac.src= "./sound-effects/tictac.mp3";
+    const FULL_DASH_ARRAY = 283;
+    const WARNING_THRESHOLD = 30;
+    const ALERT_THRESHOLD = 15;
+    
+    const COLOR_CODES = {
+      info: {
+        color: "green"
+      },
+      warning: {
+        color: "orange",
+        threshold: WARNING_THRESHOLD
+      },
+      alert: {
+        color: "red",
+        threshold: ALERT_THRESHOLD
+      }
+    };
+    
+    let TIME_LIMIT = 10;
+    let timePassed = 0;
+    let timeLeft = TIME_LIMIT;
+    let timerInterval = null;
+    let remainingPathColor = COLOR_CODES.info.color;
+    
+    document.getElementById("contador").innerHTML = `
+    <div class="base-timer">
+      <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g class="base-timer__circle">
+          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+          <path
+            id="base-timer-path-remaining"
+            stroke-dasharray="283"
+            class="base-timer__path-remaining ${remainingPathColor}"
+            d="
+              M 50, 50
+              m -45, 0
+              a 45,45 0 1,0 90,0
+              a 45,45 0 1,0 -90,0
+            "
+          ></path>
+        </g>
+      </svg>
+      <span id="base-timer-label" class="base-timer__label">${formatTime(
+        timeLeft
+      )}</span>
+    </div>
+    `;
+    
+    function onTimesUp() {
+      clearInterval(timerInterval);
     }
-    if(seconds <= 10) {
-        tictac.play();
+    
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+        document.getElementById("base-timer-label").innerHTML = formatTime(
+          timeLeft
+        );
+        setCircleDasharray();
+        setRemainingPathColor(timeLeft);
+        if (timeLeft == 0) {
+          onTimesUp();
+        }
+      }, 1000);
     }
-    if(seconds === 0) {
-        tictac.stop();
+    
+    function formatTime(time) {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+    
+      if (time < 10) {
+          seconds = `0${seconds}`;
+        }
+        if(time <= 10) {
+            tictac.play();
+        }
+        if(time == 0) {
+            tictac.pause();
+               let nombre_ganador = "EMPATE";
+                indicar_ganador.classList.add("empate");
+                setTimeout(() => {
+                    canvas.style.display="none";
+                    contenedor_tablero.style.display="none";
+                    document.querySelector(".canvasDibujo").style.display = "none";
+                    document.getElementById("hayGanador").innerHTML = "EL TIEMPO TERMINO";
+                    indicar_ganador.innerHTML = nombre_ganador;
+                    modal_ganador.style.display ="flex";
+                    document.querySelector(".ganadorYimg").classList.remove("ganadorYimg");
+                    music.pause();
+                }, 1000)
+        }
+    
+      return `${minutes}:${seconds}`;
     }
-  
+    
+    function setRemainingPathColor(timeLeft) {
+      const { alert, warning, info } = COLOR_CODES;
+      if (timeLeft <= alert.threshold) {
+        document.getElementById("base-timer-path-remaining").classList.remove(warning.color);
+        document.getElementById("base-timer-path-remaining").classList.add(alert.color);
+      } else if (timeLeft <= warning.threshold) {
+        document.getElementById("base-timer-path-remaining").classList.remove(info.color);
+        document.getElementById("base-timer-path-remaining").classList.add(warning.color);
+      }
+    }
+    
+    function calculateTimeFraction() {
+      const rawTimeFraction = timeLeft / TIME_LIMIT;
+      return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+    }
+    
+    function setCircleDasharray() {
+      const circleDasharray = `${(
+        calculateTimeFraction() * FULL_DASH_ARRAY
+      ).toFixed(0)} 283`;
+      document.getElementById("base-timer-path-remaining").setAttribute("stroke-dasharray", circleDasharray);
+    }
+    //-------------------- FIN CONTADOR----------------------------------------
 
-  return `${minutes}:${seconds}`;
-}
-
-function setRemainingPathColor(timeLeft) {
-  const { alert, warning, info } = COLOR_CODES;
-  if (timeLeft <= alert.threshold) {
-    document
-      .getElementById("base-timer-path-remaining").classList.remove(warning.color);
-    document.getElementById("base-timer-path-remaining").classList.add(alert.color);
-  } else if (timeLeft <= warning.threshold) {
-    document.getElementById("base-timer-path-remaining").classList.remove(info.color);
-    document.getElementById("base-timer-path-remaining").classList.add(warning.color);
-  }
-}
-
-function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
-  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-}
-
-function setCircleDasharray() {
-  const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
-  ).toFixed(0)} 283`;
-  document
-    .getElementById("base-timer-path-remaining")
-    .setAttribute("stroke-dasharray", circleDasharray);
-}
-//-------------------- FIN CONTADOR----------------------------------------
-
-
+    
+};    
 

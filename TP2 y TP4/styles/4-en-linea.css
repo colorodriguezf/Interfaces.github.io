@@ -120,7 +120,7 @@ input[name=dificultad]:hover {
     justify-content: space-around;
     align-items:center;
     margin:auto;
-    width: 900px;
+    width: 1000px;
     padding-bottom: 10px;
     background-color: white;
     border: #f2eaea 3px solid;
@@ -145,6 +145,58 @@ input[name=dificultad]:hover {
     transform: translateY(5px);
     border:none;
     box-shadow: 3px 4px 4px 1px rgb(164, 164, 164);
+}
+.ganadorYimg {
+    display:flex;
+    align-items: center;
+    gap:50px;
+}
+.ganadorYimg img {
+    width:70px;
+    height:60px;
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+}
+#ganador{
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+}
+.modal-ganador ul li a {
+    font-size:25px;
+    text-decoration: none;
+}
+.modal-ganador ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+.modal-ganador ul li a:active {
+    color:#551a8b;
+}
+.modal-ganador ul li p{
+    color:#ad73e8;
+}
+.modal-ganador ul li:hover span:after{
+    content:'〰️';
+}
+.modal-ganador ul li:hover p {
+    color: #551a8b;
+}
+.reiniciar-ganador {
+    font-family: 'ArcadeClassic', sans-serif;
+    display: block;
+    border: none;
+    background:none;
+    font-size:25px;
+    color:#551a8b;
+}
+.reiniciar-ganador:hover {
+    cursor: pointer;
 }
 .contenedor-tablero-canvas {
     display:flex;
