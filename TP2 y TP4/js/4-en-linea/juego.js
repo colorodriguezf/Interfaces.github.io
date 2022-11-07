@@ -136,6 +136,7 @@ window.onload = (event) => {
         drawFichaEn(ctx, x, y) { //dibuja la ficha en la pos indicada
             if (this.getGanadora()) {
                 ctx.drawImage(this.imgW, x - this.radio, y - this.radio);
+                render_TurnoJugador.childNodes[0].innerHTML = "";
             } else {
                 ctx.drawImage(this.img, x - this.radio, y - this.radio);
             }
