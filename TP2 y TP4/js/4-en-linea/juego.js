@@ -42,6 +42,8 @@ window.onload = (event) => {
     let imageFondoTablero = new Image();
     imageFondoTablero.src = "imgs/4-en-linea/fondo-tablero.png";
 
+    let render_TurnoJugador = document.getElementById("turno-jugador");
+
 
     // Se empezo usando clases, pero no funcionaba la implementacion por lo que los getter y setter quedaron
 
@@ -271,6 +273,14 @@ window.onload = (event) => {
         posXFinTablero = x;
         // ctx.drawImage(drop, PosInicialTableroX , PosInicialTableroY - 80);
         // -------------------------------------------------------------------------------------------------
+        
+        if(turno == 1){
+            render_TurnoJugador.childNodes[0].innerHTML = "Turno jugador ROJO";
+            render_TurnoJugador.childNodes[0].style.color = "#cf4350";
+        }else{
+            render_TurnoJugador.childNodes[0].innerHTML = "Turno jugador AMARILLO";
+            render_TurnoJugador.childNodes[0].style.color = "#cfb143";
+        }
     }
 
     function cargarFichasEnArreglo(filcol) {  // Carga las fichas en un arreglo
@@ -372,6 +382,7 @@ window.onload = (event) => {
                 setTimeout(() => {
                     canvas.style.display="none";
                     contenedor_tablero.style.display="none";
+                    contenedor_turno.style.display="none";
                     document.querySelector(".canvasDibujo").style.display = "none";
                     document.getElementById("hayGanador").innerHTML = "EL TIEMPO TERMINO";
                     indicar_ganador.innerHTML = nombre_ganador;
@@ -470,6 +481,7 @@ window.onload = (event) => {
     let ganador = false;
     let modal_ganador = document.getElementById("modal-ganador");
     let contenedor_tablero = document.getElementById("contenedor-tablero");
+    let contenedor_turno = document.getElementById("contenedor-turno");
     let indicar_ganador = document.getElementById("ganador");
     let nombre_ganador = "";
 
@@ -514,6 +526,7 @@ window.onload = (event) => {
                 setTimeout(() => {
                     canvas.style.display="none";
                     contenedor_tablero.style.display="none";
+                    contenedor_turno.style.display="none";
                     document.querySelector(".canvasDibujo").style.display = "none";
                     document.getElementById("hayGanador").innerHTML="GANADOR JUGADOR";
                     indicar_ganador.innerHTML = nombre_ganador;
@@ -585,6 +598,7 @@ window.onload = (event) => {
             document.querySelector(".canvasDibujo").style.display = "flex";
             document.getElementById("contador").style.display = "flex";
             document.querySelector(".contenedor-tablero").style.display = "flex";
+            document.querySelector(".contenedor-turno").style.display = "flex";
         }, 1000)
         
         let radios = document.getElementsByName('dificultad');
@@ -617,6 +631,7 @@ window.onload = (event) => {
     document.getElementById("reiniciar-ganador").addEventListener("click",()=>{
         canvas.style.display="flex";
         contenedor_tablero.style.display="flex";
+        contenedor_turno.style.display="flex";
         document.querySelector(".canvasDibujo").style.display = "flex";
         modal_ganador.style.display ="none";
         reiniciar();
@@ -742,6 +757,7 @@ window.onload = (event) => {
                 setTimeout(() => {
                     canvas.style.display="none";
                     contenedor_tablero.style.display="none";
+                    contenedor_turno.style.display="none";
                     document.querySelector(".canvasDibujo").style.display = "none";
                     document.getElementById("hayGanador").innerHTML = "EL TIEMPO TERMINO";
                     indicar_ganador.innerHTML = nombre_ganador;
