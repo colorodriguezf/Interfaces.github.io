@@ -690,7 +690,7 @@ window.onload = (event) => {
     let timerInterval = null;
     let remainingPathColor = COLOR_CODES.info.color;
     
-   function renderContador() {
+   function renderContador() { //Renderiza el contador de tiempo
         document.getElementById("contador").innerHTML = `
         <div class="base-timer">
         <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -719,14 +719,14 @@ window.onload = (event) => {
     renderContador();
     
     
-    function onTimesUp() {
+    function onTimesUp() { // Para el tiempo y lo vuelve a setear
       clearInterval(timerInterval);
       TIME_LIMIT =300;
       timePassed= 0;
       startTimer();
     }
     
-    function startTimer() {
+    function startTimer() { // Empieza el contador
       timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
@@ -741,7 +741,7 @@ window.onload = (event) => {
       }, 1000);
     }
     
-    function formatTime(time) {
+    function formatTime(time) { // Formatea el tiempo
       const minutes = Math.floor(time / 60);
       let seconds = time % 60;
     
@@ -771,7 +771,7 @@ window.onload = (event) => {
       return `${minutes}:${seconds}`;
     }
     
-    function setRemainingPathColor(timeLeft) {
+    function setRemainingPathColor(timeLeft) {  // Colores para el tiempo
       const { alert, warning, info } = COLOR_CODES;
       if (timeLeft <= alert.threshold) {
         document.getElementById("base-timer-path-remaining").classList.remove(warning.color);
