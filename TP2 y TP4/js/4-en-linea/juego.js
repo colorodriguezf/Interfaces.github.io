@@ -494,7 +494,7 @@ window.onload = (event) => {
 
             requestAnimationFrame(actualizar);
         }
-        console.log(pos.x, pos.y);
+        // console.log(pos.x, pos.y);
 
         
         if (tablero.enDropZone(pos.x, pos.y) && (fichaActual != null) && (!ganador)) {
@@ -521,7 +521,7 @@ window.onload = (event) => {
 
                 }
                 for(let i = 0; i < img_ganador.length; i++) {
-                    console.log("E");
+                    // console.log("E");
                     img_ganador[i].src=imgsrc;
                 }
                 setTimeout(() => {
