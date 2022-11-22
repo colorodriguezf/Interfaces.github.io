@@ -42,6 +42,8 @@ window.onload = (event) => {
     let imageFondoTablero = new Image();
     imageFondoTablero.src = "imgs/4-en-linea/fondo-tablero.png";
 
+    let render_TurnoJugador = document.getElementById("turno-jugador");
+
 
     // Se empezo usando clases, pero no funcionaba la implementacion por lo que los getter y setter quedaron
 
@@ -134,6 +136,7 @@ window.onload = (event) => {
         drawFichaEn(ctx, x, y) { //dibuja la ficha en la pos indicada
             if (this.getGanadora()) {
                 ctx.drawImage(this.imgW, x - this.radio, y - this.radio);
+                render_TurnoJugador.childNodes[0].innerHTML = "";
             } else {
                 ctx.drawImage(this.img, x - this.radio, y - this.radio);
             }
@@ -271,6 +274,14 @@ window.onload = (event) => {
         posXFinTablero = x;
         // ctx.drawImage(drop, PosInicialTableroX , PosInicialTableroY - 80);
         // -------------------------------------------------------------------------------------------------
+        
+        if(turno == 1){
+            render_TurnoJugador.childNodes[0].innerHTML = "Turno jugador ROJO";
+            render_TurnoJugador.childNodes[0].style.color = "#cf4350";
+        }else{
+            render_TurnoJugador.childNodes[0].innerHTML = "Turno jugador AMARILLO";
+            render_TurnoJugador.childNodes[0].style.color = "#cfb143";
+        }
     }
 
     function cargarFichasEnArreglo(filcol) {  // Carga las fichas en un arreglo
@@ -372,6 +383,7 @@ window.onload = (event) => {
                 setTimeout(() => {
                     canvas.style.display="none";
                     contenedor_tablero.style.display="none";
+                    contenedor_turno.style.display="none";
                     document.querySelector(".canvasDibujo").style.display = "none";
                     document.getElementById("hayGanador").innerHTML = "EL TIEMPO TERMINO";
                     indicar_ganador.innerHTML = nombre_ganador;
@@ -470,6 +482,7 @@ window.onload = (event) => {
     let ganador = false;
     let modal_ganador = document.getElementById("modal-ganador");
     let contenedor_tablero = document.getElementById("contenedor-tablero");
+    let contenedor_turno = document.getElementById("contenedor-turno");
     let indicar_ganador = document.getElementById("ganador");
     let nombre_ganador = "";
 
@@ -481,7 +494,7 @@ window.onload = (event) => {
 
             requestAnimationFrame(actualizar);
         }
-        console.log(pos.x, pos.y);
+        // console.log(pos.x, pos.y);
 
         
         if (tablero.enDropZone(pos.x, pos.y) && (fichaActual != null) && (!ganador)) {
@@ -508,12 +521,13 @@ window.onload = (event) => {
 
                 }
                 for(let i = 0; i < img_ganador.length; i++) {
-                    console.log("E");
+                    // console.log("E");
                     img_ganador[i].src=imgsrc;
                 }
                 setTimeout(() => {
                     canvas.style.display="none";
                     contenedor_tablero.style.display="none";
+                    contenedor_turno.style.display="none";
                     document.querySelector(".canvasDibujo").style.display = "none";
                     document.getElementById("hayGanador").innerHTML="GANADOR JUGADOR";
                     indicar_ganador.innerHTML = nombre_ganador;
@@ -585,6 +599,7 @@ window.onload = (event) => {
             document.querySelector(".canvasDibujo").style.display = "flex";
             document.getElementById("contador").style.display = "flex";
             document.querySelector(".contenedor-tablero").style.display = "flex";
+            document.querySelector(".contenedor-turno").style.display = "flex";
         }, 1000)
         
         let radios = document.getElementsByName('dificultad');
@@ -617,6 +632,7 @@ window.onload = (event) => {
     document.getElementById("reiniciar-ganador").addEventListener("click",()=>{
         canvas.style.display="flex";
         contenedor_tablero.style.display="flex";
+        contenedor_turno.style.display="flex";
         document.querySelector(".canvasDibujo").style.display = "flex";
         modal_ganador.style.display ="none";
         reiniciar();
@@ -674,7 +690,7 @@ window.onload = (event) => {
     let timerInterval = null;
     let remainingPathColor = COLOR_CODES.info.color;
     
-   function renderContador() {
+   function renderContador() { //Renderiza el contador de tiempo
         document.getElementById("contador").innerHTML = `
         <div class="base-timer">
         <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -703,14 +719,14 @@ window.onload = (event) => {
     renderContador();
     
     
-    function onTimesUp() {
+    function onTimesUp() { // Para el tiempo y lo vuelve a setear
       clearInterval(timerInterval);
       TIME_LIMIT =300;
       timePassed= 0;
       startTimer();
     }
     
-    function startTimer() {
+    function startTimer() { // Empieza el contador
       timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
@@ -725,7 +741,7 @@ window.onload = (event) => {
       }, 1000);
     }
     
-    function formatTime(time) {
+    function formatTime(time) { // Formatea el tiempo
       const minutes = Math.floor(time / 60);
       let seconds = time % 60;
     
@@ -742,6 +758,7 @@ window.onload = (event) => {
                 setTimeout(() => {
                     canvas.style.display="none";
                     contenedor_tablero.style.display="none";
+                    contenedor_turno.style.display="none";
                     document.querySelector(".canvasDibujo").style.display = "none";
                     document.getElementById("hayGanador").innerHTML = "EL TIEMPO TERMINO";
                     indicar_ganador.innerHTML = nombre_ganador;
@@ -754,7 +771,7 @@ window.onload = (event) => {
       return `${minutes}:${seconds}`;
     }
     
-    function setRemainingPathColor(timeLeft) {
+    function setRemainingPathColor(timeLeft) {  // Colores para el tiempo
       const { alert, warning, info } = COLOR_CODES;
       if (timeLeft <= alert.threshold) {
         document.getElementById("base-timer-path-remaining").classList.remove(warning.color);
