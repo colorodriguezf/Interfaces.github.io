@@ -24,3 +24,19 @@ window.onclick = function(event) {
         }
     }
 }
+
+
+
+
+
+
+let autoIzq = document.querySelector(".autoIzq");
+let autoDer = document.querySelector(".autoDer");
+window.addEventListener("scroll", function() {
+    //console.log(document.documentElement.scrollTop);
+    if (document.documentElement.scrollTop > 200 && document.documentElement.scrollTop < 600) {
+        autoDer.hidden = false;
+        autoIzq.style.left = window.pageYOffset - 100 + "px";
+        autoDer.style.left = -window.pageYOffset + 1550 + "px";
+    }
+});
