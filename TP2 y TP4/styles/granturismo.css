@@ -5,7 +5,7 @@
     display:flex;
 }
 .autoIzq {
-    background: url('../imgs/granturismo/cards-info/gt7-caract1.png');
+    /* background: url('../imgs/granturismo/auto8_a.png'); */
     height: 495px;
     width: 400px;
     background-repeat: no-repeat;
@@ -14,12 +14,17 @@
 }
 
 .autoDer {
-    background: url('../imgs/granturismo/cards-info/gt7-caract1.png');
+    /* background: url('../imgs/granturismo/auto8_b.png'); */
     height: 495px;
     width: 400px;
     background-repeat: no-repeat;
     position: absolute;
     right:300px;
+}
+
+.autoDer img, .autoIzq img {
+    width: 100%;
+    height: 400px;
 }
 
 
