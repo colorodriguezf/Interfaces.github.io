@@ -1,5 +1,4 @@
 "use strict"
-
 document.getElementById("img-perfil").addEventListener("click", toggleModalPerfil);
 document.getElementById("drop-categories").addEventListener("click", dropCategories);
 
@@ -8,7 +7,15 @@ function toggleModalPerfil() {
 } 
 
 function dropCategories() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    let m = document.getElementById("myDropdown")
+    m.classList.toggle("show");
+    let contador = 0;
+    let prueba = setInterval(function() {
+        if(contador < 10){
+            document.getElementById("myDropdown").childNodes[(contador*2)+1].classList.toggle('showItem');
+            contador++;
+        }
+    }, 50);
 }
     
 // Para que se cierre el menu categorias cuando se hace click afuera
@@ -25,10 +32,11 @@ window.onclick = function(event) {
     }
 }
 
+let btnHamb = document.getElementById('menu_on');
 
-
-
-
+btnHamb.onclick = function(){
+  btnHamb.classList.toggle("visible_menu");
+};
 
 let autoIzq = document.querySelector(".autoIzq");
 let autoDer = document.querySelector(".autoDer");
