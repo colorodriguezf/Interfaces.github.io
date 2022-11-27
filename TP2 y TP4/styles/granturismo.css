@@ -31,6 +31,46 @@
 
 /*Reserva: */
 /* Punto 5 parallax */
+
+
+
+#imagenParallax {
+    /* visibility: hidden; */
+	width: 400px;
+	height: 400px;
+}
+.aparecer {
+    animation-name: aparecer;
+    animation-duration: 2s;
+    /* transform: scale(0); */
+    animation-timing-function: linear;
+    animation-iteration-count: 1s;    
+}
+
+@keyframes aparecer {  
+    0% {     transform: scale(0);
+        ; }
+    100% {     transform: scale(1);
+        ; }
+}
+
+.desaparecer {
+    animation-name: desaparecer;
+    animation-duration: 3s;
+    /* transform: scale(0); */
+    animation-timing-function: linear;
+    animation-iteration-count: 1s;    
+}
+@keyframes desaparecer {  
+    0% {     transform: scale(1);
+        ; }
+    100% {     transform: scale(0);
+        ; }
+}
+
+
+
+
 .contenedor-reserva {
     height:84vh;
     width:100%;
@@ -41,6 +81,7 @@
 
 .contenedor-logo-desc-compra {
     width:50%;
+    height:820px;
     display:flex;
     flex-direction:column;
     text-align:left;
@@ -50,7 +91,7 @@
 .contenedor-logo{
     display:flex;
     justify-content:center;
-    margin-top:50px
+    margin-top:50px;
 }
 .contenedor-logo img {
     width:45%;
