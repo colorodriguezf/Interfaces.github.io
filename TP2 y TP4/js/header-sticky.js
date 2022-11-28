@@ -1,27 +1,11 @@
-var header = document.getElementById('sticky');
+let navHeader = document.getElementById('nav-container');
+let navLogo = document.getElementById('nav-logo');
+let navCart = document.getElementById('nav-cart');
 
 
-onScroll = () => {
-  var scrolledPage = Math.round(window.pageYOffset);
-  if(scrolledPage => 10) {
-    header.classList.add('sticky');
-  } else {
-    header.classList.remove('sticky');
-  }
-}
 
-
-document.addEventListener('scroll', onScroll);
-
-    var logo = document.querySelector('.nav-logo');
-    let prevY = window.scrollY; //Posicion del scroll al inicio
-    //Detecto la posicion del scroll
-    window.addEventListener('scroll', function(){
-        if(prevY >= window.scrollY +10) { //si sube
-          header.classList.remove('reduce');
-        } else { //baja el scroll
-          header.classList.add('reduce');
-        }
-        prevY = window.scrollY; //seteo la posicion del scroll
-    })
-    
+window.addEventListener("scroll", function (){
+  navHeader.classList.toggle("scrolling", window.scrollY>0);
+  navLogo.classList.toggle("nav-logo-sticky", window.scrollY>0);
+  navCart.classList.toggle("nav-cart-sticky", window.scrollY>0);
+});
