@@ -190,14 +190,10 @@
 
     visibility: hidden;
     opacity: 0;
-	transform: scale(0.9);
+	/* transform: scale(0.9); */
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
 	transition: .7s ease-in-out all;
-}
-
-.visible {
-    visibility: visible;
-	opacity: 1;
-	transform: scale(1) translateX(0);
 }
 
 .cont-img-caract img {
@@ -262,10 +258,9 @@
 
 /*Historia */
 .contenedor-historia {
-    display:flex;
     margin:50px 0px 50px 0px;
-    flex-direction:column;
     width: 90%;
+    height: 2000px;
     margin-left:5%;
     font-size: 20px;
     color:#F3EAEA;
@@ -276,10 +271,12 @@
     gap:15px;
     letter-spacing:2px;
 }
+
 .contenedor-titulo-historia {
     text-align: center;
     margin-top:20px;
 }
+
 .contenedor-historia div {
     padding:10px 30px 10px 30px;
 }
@@ -308,7 +305,7 @@ span {
 }
 
 .contenedor-funciones {
-    color:black;
+    color:#121212;
     width:40%;
     margin-top:130px;
 }
@@ -345,24 +342,75 @@ span {
     padding-bottom: 25px; 
 }
 
-.contenedor-colum-historia{
+.contenedor-section-historia1{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+
+    visibility: hidden;
+    opacity: 0;
+	transform: scale(1);
+	transition: .5s ease-in-out all;
+
+    margin-bottom: 100px;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: 170px;
+    display: flex;
+}
+.contenedor-section-historia2{
+
+    visibility: hidden;
+    opacity: 0;
+	transform: scale(1);
+	transition: .5s ease-in-out all;
+
+    margin-bottom: 100px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 170px;
+    bottom: 225px;
+    display: flex;
+}
+.contenedor-section-historia3{
+    visibility: hidden;
+    opacity: 0;
+	transform: scale(1);
+	transition: .5s ease-in-out all;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 170px;
+    bottom: 225px;
     display: flex;
 }
 
-.historia-colum-izq{
+/* .historia-colum-izq{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 150px;
+} */
+
+.historia-colum-der {
     margin: auto;
 }
 
-.historia-colum-izq img{
+.img-historia {
+    width: 500px;
+    height: 500px;
     border-radius: 10px;
-}
-
-.historia-colum-der{
-    justify-content: center;
-    align-items: center;
+    object-fit: cover;
 }
 
 /* .{
     transform: translate3d(0px, 4.4759px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
 } */
-    
+
+.scroll-reveal {
+    display: unset;
+}
+
+.visible {
+    visibility: visible;
+	opacity: 1;
+	transform: scale(1) translateX(0);
+}
