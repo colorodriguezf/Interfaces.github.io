@@ -1,33 +1,44 @@
 /* Punto 8 animacion utilizando un spritesheet */
-.animacion-auto {
-    height:50vh; 
-    padding-top: 100px; 
-    display:flex;
-}
-.autoIzq {
-    /* background: url('../imgs/granturismo/auto8_a.png'); */
-    height: 495px;
-    width: 400px;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: 1;
-}
 
-.autoDer {
-    /* background: url('../imgs/granturismo/auto8_b.png'); */
-    height: 495px;
-    width: 400px;
-    background-repeat: no-repeat;
-    position: absolute;
-    right:300px;
-}
-
-.autoDer img, .autoIzq img {
+.spriteSheet-background{
+    height: 350px;
     width: 100%;
-    height: 400px;
-}
+    position: relative;
+    top:100px;
+    background: url("../imgs/granturismo/prueba2.jpg") repeat;
+    animation: animate-background 20s linear infinite;
+    overflow: hidden;
+    object-fit: cover;
+   
+  }
+  .car{
+      width: 140px;
+      height: 107px;
+      background: url("../imgs/granturismo/autoMover.png");
+      bottom: 0px;
+      left: 40%;
+      position: absolute;
+      overflow: hidden;
+      animation: run-astronaut 3s steps(5) infinite;
+  }
 
+  @keyframes run-astronaut {
+      0%{
+          background-position: 0px;
+      }
+      100%{
+          background-position: -141px;
+      }
+  }
 
+  @keyframes animate-background {
+      0%{
+          background-position: 0px;
+      }
+      100%{
+          background-position: -1520px;
+      }
+  }
 
 /*Reserva: */
 /* Punto 5 parallax */
@@ -210,6 +221,19 @@
     font-size:18px;
 }
 
+
+
+.reduce {
+    height: 20px;
+}
+.reduce .nav-container{
+    height: 60px;
+}
+
+.reduce img {
+    height:40px;
+    width:40px;
+}
 
 .contenedor-carrousel-caracteristicas {
     display: flex;

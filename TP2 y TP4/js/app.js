@@ -38,24 +38,15 @@ btnHamb.onclick = function(){
   btnHamb.classList.toggle("visible_menu");
 };
 
-let autoIzq = document.querySelector(".autoIzq");
-let autoDer = document.querySelector(".autoDer");
-window.addEventListener("scroll", function() {
-    if (document.documentElement.scrollTop > 200 && document.documentElement.scrollTop < 600) {
-        autoDer.hidden = false;
-        autoIzq.style.left = window.pageYOffset - 100 + "px";
-        autoDer.style.left = -window.pageYOffset + 1550 + "px";
-    }
-});
+
 
 
 
 //Punto 5
 const imagenParallax = document.getElementById('imagenParallax');
 const pParallax = document.getElementById('pParallax');
-
 window.addEventListener("scroll", function() {
-    console.log(pParallax.clientHeight);
+    // console.log(pParallax.clientHeight);
     if (document.documentElement.scrollTop > 1 && document.documentElement.scrollTop < 600) {
         imagenParallax.style.height =imagenParallax.clientWidth - window.pageYOffset + "px";
         pParallax.style.height =pParallax.clientHeight - 0.5 + "px";
