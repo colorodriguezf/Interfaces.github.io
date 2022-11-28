@@ -3,7 +3,7 @@ var header = document.getElementById('sticky');
 
 onScroll = () => {
   var scrolledPage = Math.round(window.pageYOffset);
-  if(scrolledPage > 10) {
+  if(scrolledPage => 10) {
     header.classList.add('sticky');
   } else {
     header.classList.remove('sticky');
@@ -12,9 +12,6 @@ onScroll = () => {
 
 
 document.addEventListener('scroll', onScroll);
-
-
-
     var logo = document.querySelector('.nav-logo');
     let prevY = window.scrollY; //Posicion del scroll al inicio
     //Detecto la posicion del scroll
