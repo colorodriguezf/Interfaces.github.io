@@ -12,11 +12,12 @@ onScroll = () => {
 
 
 document.addEventListener('scroll', onScroll);
+
     var logo = document.querySelector('.nav-logo');
     let prevY = window.scrollY; //Posicion del scroll al inicio
     //Detecto la posicion del scroll
     window.addEventListener('scroll', function(){
-        if(prevY > window.scrollY) { //si sube
+        if(prevY >= window.scrollY +10) { //si sube
           header.classList.remove('reduce');
         } else { //baja el scroll
           header.classList.add('reduce');
