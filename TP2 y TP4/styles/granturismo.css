@@ -80,8 +80,6 @@
 }
 
 
-
-
 .contenedor-reserva {
     height:84vh;
     width:100%;
@@ -169,7 +167,7 @@
 .contenedor-caractClave h1 {
     color:white;
     margin-bottom: 0px;
-    font-size: 30px;
+    font-size: 40px;
 }
 .contenedor-caractClave h2 {
     color: #C9C9C9;
