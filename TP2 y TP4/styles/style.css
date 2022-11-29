@@ -908,6 +908,7 @@ svg {
 
     .showItem{
         display: block;
+        opacity: 0;
         animation: translateX 300ms ease-in-out forwards;
     }
 
