@@ -12,17 +12,18 @@
    
   }
   .car{
-      width: 140px;
-      height: 107px;
-      background: url("../imgs/granturismo/autoMover.png");
-      bottom: 0px;
-      left: 40%;
-      position: absolute;
-      overflow: hidden;
-      animation: run-astronaut 3s steps(5) infinite;
+    width: 115px;
+    height: 155px;
+    background: url(../imgs/granturismo/personaSprites.png);
+    bottom: 0px;
+    left: 40%;
+    position: absolute;
+    overflow: hidden;
+    animation: run-person 3s steps(8) infinite;
+    /* tuvimos problemas para poder hacer bien el spreet del auto, probamos con una persona y tambien nos quedo mal */
   }
 
-  @keyframes run-astronaut {
+  @keyframes run-person {
       0%{
           background-position: 0px;
       }
