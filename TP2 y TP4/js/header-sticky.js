@@ -1,14 +1,8 @@
-var header = document.getElementById('sticky');
+let navHeader = document.getElementById('nav-container');
+let navLogo = document.getElementById('nav-logo');
+let navCart = document.getElementById('nav-cart');
 
 
-onScroll = () => {
-  var scrolledPage = Math.round(window.pageYOffset);
-  if(scrolledPage => 10) {
-    header.classList.add('sticky');
-  } else {
-    header.classList.remove('sticky');
-  }
-}
 
 
 document.addEventListener('scroll', onScroll);
