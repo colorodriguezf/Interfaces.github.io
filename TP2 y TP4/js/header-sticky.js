@@ -2,43 +2,24 @@ let navHeader = document.getElementById('nav-container');
 let navLogo = document.getElementById('nav-logo');
 let navCart = document.getElementById('nav-cart');
 
-
-
-
-document.addEventListener('scroll', onScroll);
-
-    var logo = document.querySelector('.nav-logo');
-    let prevY = window.scrollY; //Posicion del scroll al inicio
-    //Detecto la posicion del scroll
-    window.addEventListener('scroll', function(){
-        if(prevY >= window.scrollY +10) { //si sube
-          header.classList.remove('reduce');
-        } else { //baja el scroll
-          header.classList.add('reduce');
-        }
-        prevY = window.scrollY; //seteo la posicion del scroll
-    })
-    
-
-
-
-
-
-
-
+window.addEventListener("scroll", function (){
+  navHeader.classList.toggle("scrolling", window.scrollY>0);
+  navLogo.classList.toggle("nav-logo-sticky", window.scrollY>0);
+  navCart.classList.toggle("nav-cart-sticky", window.scrollY>0);
+});
 
 
 
 
 
     //Punto 9, separación entre el título y personajes
-    var titulo = document.querySelector("#titulo-efecto");
+    var titulo = document.getElementById("titulo-efecto");
     titulo.style.opacity = 0.1;
     var distance=0;
     var movimiento = 100
     titulo.style.transform = `translateY(-${movimiento*2}px)`;
 
-window.addEventListener("scroll", function(){
+    window.addEventListener("scroll", function(){
     var windowHeight = window.innerHeight;
     var elementTop = titulo.getBoundingClientRect().top;
     var elementVisible = 400;
