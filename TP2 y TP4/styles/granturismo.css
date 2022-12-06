@@ -258,7 +258,7 @@
 .contenedor-historia {
     margin:50px 0px 50px 0px;
     width: 90%;
-    height: 1700px;
+    height: 1500px;
     margin-left:5%;
     font-size: 20px;
     color:#F3EAEA;
@@ -345,14 +345,13 @@ span {
     display: flex;
     justify-content: center;
     width: 80%;
-    margin: 0 10%;
-    height: 500px;
+    height: 400px;
     margin-top: 10px;
 }
 
 .contenedor-section-texto-historia p {
     font-size: 1.2rem;
-    margin-right: 6rem;
+    margin-right: 2rem;
 }
 
 .showContent {
@@ -588,7 +587,7 @@ span {
          /* transform: scale(1); */
      }
   }
-  
+
   .izquierda {
     animation-name: izquierda;
     animation-duration: 1s;
