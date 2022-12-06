@@ -29,25 +29,25 @@ observador.observe(child3);
 
 // ---------------------------------------------------------------------------------------------------------------------------
 
-const historia1 = document.getElementById('historia1');
-const historia2 = document.getElementById('historia2');
-const historia3 = document.getElementById('historia3');
+// const historia1 = document.getElementById('historia1');
+// const historia2 = document.getElementById('historia2');
+// const historia3 = document.getElementById('historia3');
 
-window.addEventListener("scroll", function() {  // Segun el scroll en pantalla muestra un div y/o lo saca
-	if(this.scrollY > 2200 && this.scrollY < 2900){
-		historia1.classList.add('visible');
-	} else{
-		historia1.classList.remove('visible');
-	}
+// window.addEventListener("scroll", function() {  // Segun el scroll en pantalla muestra un div y/o lo saca
+// 	if(this.scrollY > 2200 && this.scrollY < 2900){
+// 		historia1.classList.add('visible');
+// 	} else{
+// 		historia1.classList.remove('visible');
+// 	}
 
-	if(this.scrollY > 2900 && this.scrollY < 3500){
-		historia2.classList.add('visible');
-	}else {
-		historia2.classList.remove('visible');
-	}
-	if(this.scrollY > 3500 && this.scrollY > 2900){
-		historia3.classList.add('visible');
-	} else {
-		historia3.classList.remove('visible');
-	}
-});
+// 	if(this.scrollY > 2900 && this.scrollY < 3500){
+// 		historia2.classList.add('visible');
+// 	}else {
+// 		historia2.classList.remove('visible');
+// 	}
+// 	if(this.scrollY > 3500 && this.scrollY > 2900){
+// 		historia3.classList.add('visible');
+// 	} else {
+// 		historia3.classList.remove('visible');
+// 	}
+// });

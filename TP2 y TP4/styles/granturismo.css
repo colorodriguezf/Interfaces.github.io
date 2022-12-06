@@ -234,8 +234,6 @@
     font-size:18px;
 }
 
-
-
 .reduce {
     height: 20px;
 }
@@ -594,6 +592,12 @@ span {
     height: 500px;
     border-radius:10px;
   }
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
   
   @keyframes fade {
     0% {    
