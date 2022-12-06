@@ -104,8 +104,8 @@
 .parallax-layer.imagenParallax2{
     top: -820px;
     left: -840px;
-    height: 300vh;
-    width: 700vh;
+    height: 2823px;
+    width: 6587px;
     background: url("../imgs/granturismo/hola.png") 0 / cover fixed;
     transform: translateZ(-2px);
 }
