@@ -9,6 +9,7 @@
         animation: animate-background 20s linear infinite;
         overflow: hidden;
         object-fit: cover;
+        margin-bottom: 230px;;
     }
 
     #car{
@@ -32,12 +33,12 @@
     }
 
   @keyframes animate-background {
-      0%{
-          background-position: 0px;
-      }
-      100%{
-          background-position: -1520px;
-      }
+    0%{
+        background-position: 0px;
+    }
+    100%{
+        background-position: -1520px;
+    }
   }
 
 /*Reserva: */
@@ -174,8 +175,8 @@
 }
 .cont-caract-cards {
     margin-top:200px;
-    background: rgb(27,27,27);
-    background: linear-gradient(0deg, rgb(59, 59, 59) 0%, rgba(31,31,31,1) 16%, rgba(14,15,15,1) 53%, rgba(0,0,0,1) 100%);
+    /* background: rgb(27,27,27); */
+    /* background: linear-gradient(0deg, rgb(59, 59, 59) 0%, rgba(31,31,31,1) 16%, rgba(14,15,15,1) 53%, rgba(0,0,0,1) 100%); */
     padding-bottom: 40px;
 }
 .contenedor-caractClave {
@@ -597,6 +598,11 @@ span {
     visibility: visible;
     opacity: 1;
     transform: scale(1) translateX(0);
+}
+
+.fondo-carru{
+    padding-bottom: 200px;
+    background: linear-gradient(0deg, rgb(59, 59, 59) 0%, rgb(31, 31, 31) 16%, rgb(14, 15, 15) 53%, rgb(0, 0, 0) 100%);
 }
   
   @keyframes fade {

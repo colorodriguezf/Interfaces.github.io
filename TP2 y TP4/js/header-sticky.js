@@ -12,33 +12,33 @@ window.addEventListener("scroll", function (){
 
 
 
-    //Punto 9, separación entre el título y personajes
-    var titulo = document.getElementById("titulo-efecto");
-    titulo.style.opacity = 0.1;
-    var distance=0;
-    var movimiento = 100
+//Punto 9, separación entre el título y personajes
+var titulo = document.getElementById("titulo-efecto");
+titulo.style.opacity = 0.1;
+var distance=0;
+var movimiento = 80;
+titulo.style.transform = `translateY(-${movimiento*2}px)`;
+
+window.addEventListener("scroll", function(){
+var windowHeight = window.innerHeight;
+var elementTop = titulo.getBoundingClientRect().top;
+var elementVisible = 400;
+var distanceNow = window.scrollY;
+
+if(elementTop < (windowHeight - elementVisible) && titulo.style.opacity<1 && distanceNow>distance && movimiento>0){
+    titulo.style.opacity = titulo.style.opacity*1.2;
     titulo.style.transform = `translateY(-${movimiento*2}px)`;
+    movimiento = movimiento - 6;
+}else if (elementTop > (windowHeight - elementVisible) && distanceNow<distance && titulo.style.opacity>0.1){
+    titulo.style.opacity = titulo.style.opacity*0.9;
+    titulo.style.transform = `translateY(-${movimiento*2}px)`;
+    movimiento = movimiento + 6;
+}
 
-    window.addEventListener("scroll", function(){
-    var windowHeight = window.innerHeight;
-    var elementTop = titulo.getBoundingClientRect().top;
-    var elementVisible = 400;
-    var distanceNow = window.scrollY;
+if (movimiento>80){
+    movimiento = 80;
+}
 
-    if(elementTop < (windowHeight - elementVisible) && titulo.style.opacity<1 && distanceNow>distance && movimiento>0){
-        titulo.style.opacity = titulo.style.opacity*1.2;
-        titulo.style.transform = `translateY(-${movimiento*2}px)`;
-        movimiento = movimiento -2;
-    }else if (elementTop > (windowHeight - elementVisible) && distanceNow<distance && titulo.style.opacity>0.1){
-        titulo.style.opacity = titulo.style.opacity*0.9;
-        titulo.style.transform = `translateY(-${movimiento*2}px)`;
-        movimiento = movimiento +2;
-    }
-
-    if (movimiento>30){
-        movimiento = 30;
-    }
-
-    distance=distanceNow;
+distance=distanceNow;
 
 });

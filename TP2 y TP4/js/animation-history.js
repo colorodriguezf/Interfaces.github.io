@@ -88,7 +88,6 @@ function scrollAppear() {
   slidersUp.forEach((slider) => {
     let top = slider.getBoundingClientRect().top;
     let scroll = window.innerHeight;
-    console.log(top)
     if (top < scroll) {
       slider.classList.add("appear");
     }
