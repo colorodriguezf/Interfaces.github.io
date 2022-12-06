@@ -79,13 +79,34 @@
         ; }
 }
 
+.parallax{
+    height:84vh;
+    perspective: 1px;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
 .contenedor-reserva {
     height:84vh;
     width:100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background: url("../imgs/granturismo/granturismo1.png") 0 / cover fixed;
+    background: url("../imgs/granturismo/granturismo2.png") 0 / cover fixed;
+}
+
+.parallax-layer.imagenParallax2{
+    top: -820px;
+    left: -840px;
+    height: 300vh;
+    width: 700vh;
+    background: url("../imgs/granturismo/hola.png") 0 / cover fixed;
+    transform: translateZ(-2px);
 }
 
 .contenedor-logo-desc-compra {
